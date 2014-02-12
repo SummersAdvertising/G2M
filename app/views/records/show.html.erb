@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User fbid:</b>
+  <%= @record.user_fbid %>
+</p>
+
+<p>
+  <b>User type:</b>
+  <%= @record.user_type %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%= @record.answer %>
+</p>
+
+<p>
+  <b>Fbshare:</b>
+  <%= @record.fbshare_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>

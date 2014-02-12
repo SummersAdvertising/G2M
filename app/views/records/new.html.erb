@@ -1,0 +1,64 @@
+<h2>G2M</h2>
+
+<%= form_for(@record) do |f| %>
+  <%= f.select(:user_type, [["老闆／公司負責人", "administrator"], ["主管", "manager"], ["員工", "employee"]], prompt: "請選擇您的職位") %><br>
+
+  <table>
+  	<tr>
+  		<td>
+  			Q1: =================== <br>
+  			Answer: <input type="radio" id="Q1_yes" name="Q1"><label for="Q1_yes">yes</label>／<input type="radio" id="Q1_no" name="Q1"><label for="Q1_no">no</label>
+  		</td>
+  	</tr>
+  	<tr>
+  		<td>
+  			Q2: =================== <br>
+  			Answer: <input type="radio" id="Q2_yes" name="Q2"><label for="Q2_yes">yes</label>／<input type="radio" id="Q2_no" name="Q2"><label for="Q2_no">no</label>
+  		</td>
+  	</tr>
+  	<tr>
+  		<td>
+  			Q3: =================== <br>
+  			Answer: <input type="radio" id="Q3_yes" name="Q3"><label for="Q3_yes">yes</label>／<input type="radio" id="Q3_no" name="Q3"><label for="Q3_no">no</label>
+  		</td>
+  	</tr>
+  		<td>
+  			Q4: =================== <br>
+  			Answer: <input type="radio" id="Q4_yes" name="Q4"><label for="Q4_yes">yes</label>／<input type="radio" id="Q4_no" name="Q4"><label for="Q4_no">no</label>
+  		</td>
+  	</tr>
+  	<tr>
+  		<td>
+  			Q5: =================== <br>
+  			Answer: <input type="radio" id="Q5_yes" name="Q5"><label for="Q5_yes">yes</label>／<input type="radio" id="Q5_no" name="Q5"><label for="Q5_no">no</label>
+  		</td>
+  	</tr>
+  	<tr>
+  		<td>
+  			Q6: =================== <br>
+  			Answer: <input type="radio" id="Q6_yes" name="Q6"><label for="Q6_yes">yes</label>／<input type="radio" id="Q6_no" name="Q6"><label for="Q6_no">no</label>
+  		</td>
+  	</tr>
+  </table>
+
+  <%= f.hidden_field :answer %>
+
+  <div class="actions">
+    <%= f.submit "下一步" %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+$("form#new_record").submit(function(){
+	var answerArray = new Array();
+	for(var i=1; i<=6; i++){
+		answerArray.push($("#Q"+i+"_yes").prop("checked"));
+	}
+	
+	var input_record_answer = $("<input>").attr("type", "hidden").attr("name", "record[answer]").val( JSON.stringify(answerArray) );
+
+	$(this).append(input_record_answer);
+
+	return true;
+});
+</script>

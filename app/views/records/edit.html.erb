@@ -1,0 +1,130 @@
+<h1>Editing record</h1>
+<h2>G2M - Result</h2>
+
+<div id="Q1_yes" class="results">
+	<p>Your Q1 answer: YES.</p>
+	<p>and some advices go here ...</p>
+</div>
+<div id="Q1_no" class="results">
+	<p>Your Q1 answer: NO.</p>
+	<p>and some advices go here ...</p>
+</div>
+
+<div id="Q2_yes" class="results">
+	<p>Your Q2 answer: YES.</p>
+	<p>and some advices go here ...</p>
+</div>
+<div id="Q2_no" class="results">
+	<p>Your Q2 answer: NO.</p>
+	<p>and some advices go here ...</p>
+</div>
+
+<div id="Q3_yes" class="results">
+	<p>Your Q3 answer: YES.</p>
+	<p>and some advices go here ...</p>
+</div>
+<div id="Q3_no" class="results">
+	<p>Your Q3 answer: NO.</p>
+	<p>and some advices go here ...</p>
+</div>
+
+<div id="Q4_yes" class="results">
+	<p>Your Q4 answer: YES.</p>
+	<p>and some advices go here ...</p>
+</div>
+<div id="Q4_no" class="results">
+	<p>Your Q4 answer: NO.</p>
+	<p>and some advices go here ...</p>
+</div>
+
+<div id="Q5_yes" class="results">
+	<p>Your Q5 answer: YES.</p>
+	<p>and some advices go here ...</p>
+</div>
+<div id="Q5_no" class="results">
+	<p>Your Q5 answer: NO.</p>
+	<p>and some advices go here ...</p>
+</div>
+
+<div id="Q6_yes" class="results">
+	<p>Your Q6 answer: YES.</p>
+	<p>and some advices go here ...</p>
+</div>
+<div id="Q6_no" class="results">
+	<p>Your Q6 answer: NO.</p>
+	<p>and some advices go here ...</p>
+</div>
+
+<div>
+	<p id="result_0" class="results">result: type 0.</p>
+	<p id="result_1" class="results">result: type 1.</p>
+	<p id="result_2" class="results">result: type 2.</p>
+	<p id="result_3" class="results">result: type 3.</p>
+	<p id="result_4" class="results">result: type 4.</p>
+	<p id="result_5" class="results">result: type 5.</p>
+	<p id="result_6" class="results">result: type 6.</p>
+</div>
+
+<a href="#" id="link_fb">share and join ^w<~*</a>
+
+<%= form_for(@record) do |f| %>
+<%= f.hidden_field :user_fbid %>
+<%= f.hidden_field :fbshare_id %>
+<% end %>
+
+<!-- for fb like button, include the JavaScript SDK -->
+<div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+	FB.init({
+		appId      : '785586314789164',
+		status     : true,
+		xfbml      : true
+	});
+};
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=785586314789164";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script type="text/javascript">
+var results = JSON.parse("<%= @record.answer %>");
+var results_yes_count = 0;
+
+for(var i=1; i<=6; i++){
+	if(results[i-1]){
+		results_yes_count++;
+	}
+	$("div#Q"+i+ (results[i-1] ? "_yes" : "_no") ).show();
+}
+
+$("p#result_"+results_yes_count).show();
+
+$("a#link_fb").click(function(e){
+	e.preventDefault();
+	FB.login(function(){
+		FB.api('/me/feed', 'post', {message: 'Hello, world! Testing FB SDK :DDDD'},function (response) {
+			if (response && response.id) {
+				//share to FB successfully, update record
+				$("input#record_fbshare_id").val(response.id);
+
+				FB.api("/me",function (response) {
+					if (response && response.id) {
+						$("input#record_user_fbid").val(response.id);
+					}
+
+					$("form#edit_record_<%= @record.id %>").submit();
+				});				
+			}
+			else{
+				alert("分享至Facebook失敗，無法參加活動。");
+			}
+		});
+	}, {scope: 'publish_actions'});
+});
+	
+</script>

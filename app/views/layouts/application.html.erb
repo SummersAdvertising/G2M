@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>G2M</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+  	if("<%= alert || notice %>"){
+  		alert("<%= alert || notice %>");
+  	}
+  });
+  </script>
+
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
