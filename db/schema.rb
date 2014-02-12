@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140212070956) do
+ActiveRecord::Schema.define(:version => 20140212094255) do
 
   create_table "records", :force => true do |t|
     t.string   "user_fbid"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20140212070956) do
   end
 
   create_table "signups", :force => true do |t|
+    t.integer  "record_id"
     t.string   "name"
     t.string   "company"
     t.string   "title"

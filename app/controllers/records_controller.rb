@@ -57,10 +57,18 @@ class RecordsController < ApplicationController
   # PUT /records/1
   # PUT /records/1.json
   def update
-    @record = Record.find(params[:id])
+    @record = Record.find_by_id(params[:id])
+    @signup = Signup.find_by_record_id(params[:id]) || Signup.create(:record_id => @record.id)
+
+    params[:signup][:office_interested] = params[:signup][:office_interested].to_json
+    params[:signup][:pc_interested] = params[:signup][:pc_interested].to_json
+    params[:signup][:pc_os] = params[:signup][:pc_os].to_json
+    params[:signup][:office_version] = params[:signup][:office_version].to_json
 
     respond_to do |format|
-      if @record.update_attributes(params[:record])
+      if ( @record.user_fbid || @record.update_attributes(params[:record]) )
+        @signup.update_attributes(params[:signup])
+
         format.html { redirect_to root_path, notice: '參加成功 XDDD。' }
         format.json { head :no_content }
       else

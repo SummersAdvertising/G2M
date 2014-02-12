@@ -6,6 +6,12 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
+  <% if(params[:controller]=="records" && (params[:action]=="new" || params[:action]=="edit") ) %>
+  <script src="/js/plugins/validation/jquery.validationEngine-zh_TW.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/plugins/validation/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="/js/plugins/validation/validationEngine.jquery.css" type="text/css"/>
+  <% end %>
+
   <script type="text/javascript">
   $(document).ready(function(){
   	if("<%= alert || notice %>"){
@@ -16,7 +22,7 @@
 
 </head>
 <body>
-
+  
 <%= yield %>
 
 </body>

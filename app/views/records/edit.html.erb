@@ -65,12 +65,96 @@
 	<p id="result_6" class="results">result: type 6.</p>
 </div>
 
-<a href="#" id="link_fb">share and join ^w<~*</a>
-
 <%= form_for(@record) do |f| %>
+<div>
+	<h4>我有興趣的優惠方案是？（可複選）</h4>
+	<%= check_box_tag("signup[office_interested][]", "Windows 8.1", nil, :id => "signup[office_interested]1", :class => "validate[minCheckbox[1]]") %><label for="signup[office_interested]1">Windows 8.1</label>
+	<%= check_box_tag("signup[office_interested][]", "Office 2013", nil, :id => "signup[office_interested]2", :class => "validate[minCheckbox[1]]") %><label for="signup[office_interested]2">Office 2013</label>
+	<%= check_box_tag("signup[office_interested][]", "Office 365", nil, :id => "signup[office_interested]3", :class => "validate[minCheckbox[1]]") %><label for="signup[office_interested]3">Office 365</label>
+</div>
+
+<div>
+	<h4>我有興趣的電腦廠牌是？（可複選）</h4>
+	<%= check_box_tag("signup[pc_interested][]", "HP", nil, :id => "signup[pc_interested]1", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_interested]1">HP</label>
+	<%= check_box_tag("signup[pc_interested][]", "Asus", nil, :id => "signup[pc_interested]2", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_interested]2">Asus</label>
+	<%= check_box_tag("signup[pc_interested][]", "Dell", nil, :id => "signup[pc_interested]3", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_interested]3">Dell</label>
+	<%= check_box_tag("signup[pc_interested][]", "Acer", nil, :id => "signup[pc_interested]4", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_interested]4">Acer</label>
+	<%= check_box_tag("signup[pc_interested][]", "Lenovo", nil, :id => "signup[pc_interested]5", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_interested]5">Lenovo</label>
+	<%= check_box_tag("signup[pc_interested][]", "Gigabyte", nil, :id => "signup[pc_interested]6", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_interested]6">Gigabyte</label>
+	<%= check_box_tag("signup[pc_interested][]", "Genuine 捷元", nil, :id => "signup[pc_interested]7", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_interested]7">Genuine 捷元</label>
+	<%= check_box_tag("signup[pc_interested][]", "聯強 Lemel", nil, :id => "signup[pc_interested]8", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_interested]8">聯強 Lemel</label>
+	<%= check_box_tag("signup[pc_interested][]", "msi 微星科技", nil, :id => "signup[pc_interested]9", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_interested]9">msi 微星科技</label>
+</div>
+
+<div>
+	真實姓名 <%= text_field_tag "signup[name]", nil, :class => "validate[required]" %>
+</div>
+
+<div>
+	公司名稱 <%= text_field_tag "signup[company]", nil, :class => "validate[required]" %>
+</div>
+
+<div>
+	職稱 <%= text_field_tag "signup[title]", nil, :class => "validate[required]" %>
+</div>
+
+<div>
+	email <%= email_field_tag "signup[email]", nil, :class => "validate[required,custom[email]]" %>
+</div>
+
+<div>
+	聯絡電話 <%= text_field_tag "signup[tel]", nil, :class => "validate[required]" %>
+</div>
+
+<div>
+	<h4>請問您的身份是？</h4>
+	<%= radio_button_tag("signup[reason]", "公司內部需要採購", nil, :id => "signup[reason]1", :class => "validate[required]") %><label for="signup[reason]1">公司內部需要採購</label>
+	<%= radio_button_tag("signup[reason]", "個人採購", nil, :id => "signup[reason]2", :class => "validate[required]") %><label for="signup[reason]2">個人採購</label>
+	<%= radio_button_tag("signup[reason]", "本身是經銷商，幫客戶詢問", nil, :id => "signup[reason]3", :class => "validate[required]") %><label for="signup[reason]3">本身是經銷商，幫客戶詢問</label>
+	<%= radio_button_tag("signup[reason]", "幫朋友詢問", nil, :id => "signup[reason]4", :class => "validate[required]") %><label for="signup[reason]4">幫朋友詢問</label>
+</div>
+
+<div>
+	<h4>請問公司（台灣辦公室）擁有的 PC 台數（含桌機和筆電）</h4>
+	<%= text_field_tag "signup[having_pc]", nil, :class => "validate[required, custom[onlyNumberSp]]" %> 台
+</div>
+
+<div>
+	<h4>請問目前貴公司的 PC / NB 的作業系統版本為？（可複選）</h4>
+	<%= check_box_tag("signup[pc_os][]", "Windows XP Professional", nil, :id => "signup[pc_os]1", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_os]1">Windows XP Professional</label>
+	<%= check_box_tag("signup[pc_os][]", "Windows Vista", nil, :id => "signup[pc_os]2", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_os]2">Windows Vista</label>
+	<%= check_box_tag("signup[pc_os][]", "Windows 7", nil, :id => "signup[pc_os]3", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_os]3">Windows 7</label>
+	<%= check_box_tag("signup[pc_os][]", "Windows 8", nil, :id => "signup[pc_os]4", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_os]4">Windows 8</label>
+	<%= check_box_tag("signup[pc_os][]", "Windows 8.1", nil, :id => "signup[pc_os]5", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_os]5">Windows 8.1</label>
+	<%= check_box_tag("signup[pc_os][]", "Linux", nil, :id => "signup[pc_os]6", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_os]6">Linux</label>
+	<%= check_box_tag("signup[pc_os][]", "其他", nil, :id => "signup[pc_os]7", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_os]7">其他</label>
+</div>
+
+<div>
+	<h4>請問目前貴公司的文書作業系統版本為？（可複選）</h4>
+	<%= check_box_tag("signup[office_version][]", "Office 2003", nil, :id => "signup[office_version]1", :class => "validate[minCheckbox[1]]") %><label for="signup[office_version]1">Office 2003</label>
+	<%= check_box_tag("signup[office_version][]", "Office 2007", nil, :id => "signup[office_version]2", :class => "validate[minCheckbox[1]]") %><label for="signup[office_version]2">Office 2007</label>
+	<%= check_box_tag("signup[office_version][]", "Office 2010", nil, :id => "signup[office_version]3", :class => "validate[minCheckbox[1]]") %><label for="signup[office_version]3">Office 2010</label>
+	<%= check_box_tag("signup[office_version][]", "Office 2013", nil, :id => "signup[office_version]4", :class => "validate[minCheckbox[1]]") %><label for="signup[office_version]4">Office 2013</label>
+	<%= check_box_tag("signup[office_version][]", "其他", nil, :id => "signup[office_version]5", :class => "validate[minCheckbox[1]]") %><label for="signup[office_version]5">其他</label>
+</div>
+
+<div>
+	<h4>請問貴公司在未來6個月內，是否有計劃升級作業系統？</h4>
+	<%= radio_button_tag("signup[update_need]", "是", nil, :id => "signup[update_need]1", :class => "validate[required]") %><label for="signup[update_need]1">是</label>
+	<%= radio_button_tag("signup[update_need]", "否", nil, :id => "signup[update_need]2", :class => "validate[required]") %><label for="signup[update_need]2">否</label>
+	<%= radio_button_tag("signup[update_need]", "不知道", nil, :id => "signup[update_need]3", :class => "validate[required]") %><label for="signup[update_need]3">不知道</label>
+</div>
+
+<div>
+	<input id="agree_privacy" type="checkbox" class="validate[required]" name="agree_privacy"><label for="agree_privacy">我同意以下隱私權聲明</label>
+</div>
+
 <%= f.hidden_field :user_fbid %>
 <%= f.hidden_field :fbshare_id %>
 <% end %>
+
+<a href="#" id="link_fb">share and join ^w<~*</a>
 
 <!-- for fb like button, include the JavaScript SDK -->
 <div id="fb-root"></div>
@@ -92,6 +176,8 @@ window.fbAsyncInit = function() {
 </script>
 
 <script type="text/javascript">
+$("form#edit_record_<%= @record.id %>").validationEngine();
+
 var results = JSON.parse("<%= @record.answer %>");
 var results_yes_count = 0;
 
@@ -106,25 +192,28 @@ $("p#result_"+results_yes_count).show();
 
 $("a#link_fb").click(function(e){
 	e.preventDefault();
-	FB.login(function(){
-		FB.api('/me/feed', 'post', {message: 'Hello, world! Testing FB SDK :DDDD'},function (response) {
-			if (response && response.id) {
-				//share to FB successfully, update record
-				$("input#record_fbshare_id").val(response.id);
 
-				FB.api("/me",function (response) {
-					if (response && response.id) {
-						$("input#record_user_fbid").val(response.id);
-					}
+	if( $("form#edit_record_<%= @record.id %>").validationEngine('validate') ){
+		FB.login(function(){
+			FB.api('/me/feed', 'post', {message: 'Hello, world! Testing FB SDK :DDDD'},function (response) {
+				if (response && response.id) {
+					//share to FB successfully, update record
+					$("input#record_fbshare_id").val(response.id);
 
-					$("form#edit_record_<%= @record.id %>").submit();
-				});				
-			}
-			else{
-				alert("分享至Facebook失敗，無法參加活動。");
-			}
-		});
-	}, {scope: 'publish_actions'});
+					FB.api("/me",function (response) {
+						if (response && response.id) {
+							$("input#record_user_fbid").val(response.id);
+						}
+
+						$("form#edit_record_<%= @record.id %>").submit();
+					});				
+				}
+				else{
+					alert("分享至Facebook失敗，無法參加活動。");
+				}
+			});
+		}, {scope: 'publish_actions'});
+	}
 });
 	
 </script>
