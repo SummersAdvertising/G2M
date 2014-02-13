@@ -142,7 +142,7 @@ $("form#new_record").submit(function(){
 		answerArray.push($(".questions:visible .Q"+i+"_yes").prop("checked"));
 	}
 	
-	var input_record_answer = $("<input>").attr("type", "text").attr("name", "record[answer]").val( JSON.stringify(answerArray) );
+	var input_record_answer = $("<input>").attr("type", "hidden").attr("name", "record[answer]").val( JSON.stringify(answerArray) );
 
 	$(this).append(input_record_answer);
 	return $(this).validationEngine('validate');
