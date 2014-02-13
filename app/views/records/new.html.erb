@@ -3,40 +3,116 @@
 <%= form_for(@record) do |f| %>
   <%= f.select(:user_type, [["老闆／公司負責人", "administrator"], ["主管", "manager"], ["員工", "employee"]], {prompt: "請選擇您的職位"}, {:class => "validate[required]"}) %><br>
 
-  <table>
+  <table class="questions" id="administrator">
   	<tr>
   		<td>
-  			Q1: =================== <br>
-  			Answer: <input type="radio" id="Q1_yes" name="Q1" class="validate[required]"><label for="Q1_yes">yes</label>／<input type="radio" id="Q1_no" name="Q1" class="validate[required]"><label for="Q1_no">no</label>
+  			Q1: =================== (administrator)<br>
+  			Answer: <input type="radio" class="validate[required] Q1_yes" name="Q1" id="admin_Q1_yes"><label for="admin_Q1_yes">yes</label>／<input type="radio" class="validate[required] Q1_no" name="Q1" id="admin_Q1_no"><label for="admin_Q1_no">no</label>
   		</td>
   	</tr>
   	<tr>
   		<td>
   			Q2: =================== <br>
-  			Answer: <input type="radio" id="Q2_yes" name="Q2" class="validate[required]"><label for="Q2_yes">yes</label>／<input type="radio" id="Q2_no" name="Q2" class="validate[required]"><label for="Q2_no">no</label>
+  			Answer: <input type="radio" class="validate[required] Q2_yes" name="Q2" id="admin_Q2_yes"><label for="admin_Q2_yes">yes</label>／<input type="radio" class="validate[required] Q2_no" name="Q2" id="admin_Q2_no"><label for="admin_Q2_no">no</label>
   		</td>
   	</tr>
   	<tr>
   		<td>
   			Q3: =================== <br>
-  			Answer: <input type="radio" id="Q3_yes" name="Q3" class="validate[required]"><label for="Q3_yes">yes</label>／<input type="radio" id="Q3_no" name="Q3" class="validate[required]"><label for="Q3_no">no</label>
+  			Answer: <input type="radio" class="validate[required] Q3_yes" name="Q3" id="admin_Q3_yes"><label for="admin_Q3_yes">yes</label>／<input type="radio" class="validate[required] Q3_no" name="Q3" id="admin_Q3_no"><label for="admin_Q3_no">no</label>
   		</td>
   	</tr>
   		<td>
   			Q4: =================== <br>
-  			Answer: <input type="radio" id="Q4_yes" name="Q4" class="validate[required]"><label for="Q4_yes">yes</label>／<input type="radio" id="Q4_no" name="Q4" class="validate[required]"><label for="Q4_no">no</label>
+  			Answer: <input type="radio" class="validate[required] Q4_yes" name="Q4" id="admin_Q4_yes"><label for="admin_Q4_yes">yes</label>／<input type="radio" class="validate[required] Q4_no" name="Q4" id="admin_Q4_no"><label for="admin_Q4_no">no</label>
   		</td>
   	</tr>
   	<tr>
   		<td>
   			Q5: =================== <br>
-  			Answer: <input type="radio" id="Q5_yes" name="Q5" class="validate[required]"><label for="Q5_yes">yes</label>／<input type="radio" id="Q5_no" name="Q5" class="validate[required]"><label for="Q5_no">no</label>
+  			Answer: <input type="radio" class="validate[required] Q5_yes" name="Q5" id="admin_Q5_yes"><label for="admin_Q5_yes">yes</label>／<input type="radio" class="validate[required] Q5_no" name="Q5" id="admin_Q5_no"><label for="admin_Q5_no">no</label>
   		</td>
   	</tr>
   	<tr>
   		<td>
   			Q6: =================== <br>
-  			Answer: <input type="radio" id="Q6_yes" name="Q6" class="validate[required]"><label for="Q6_yes">yes</label>／<input type="radio" id="Q6_no" name="Q6" class="validate[required]"><label for="Q6_no">no</label>
+  			Answer: <input type="radio" class="validate[required] Q6_yes" name="Q6" id="admin_Q6_yes"><label for="admin_Q6_yes">yes</label>／<input type="radio" class="validate[required] Q6_no" name="Q6" id="admin_Q6_no"><label for="admin_Q6_no">no</label>
+  		</td>
+  	</tr>
+  </table>
+
+  <table class="questions" id="manager">
+  	<tr>
+  		<td>
+  			Q1: =================== (manager)<br>
+  			Answer: <input type="radio" class="validate[required] Q1_yes" name="Q1" id="manager_Q1_yes"><label for="manager_Q1_yes">yes</label>／<input type="radio" class="validate[required] Q1_no" name="Q1" id="manager_Q1_no"><label for="manager_Q1_no">no</label>
+  		</td>
+  	</tr>
+  	<tr>
+  		<td>
+  			Q2: =================== <br>
+  			Answer: <input type="radio" class="validate[required] Q2_yes" name="Q2" id="manager_Q2_yes"><label for="manager_Q2_yes">yes</label>／<input type="radio" class="validate[required] Q2_no" name="Q2" id="manager_Q2_no"><label for="manager_Q2_no">no</label>
+  		</td>
+  	</tr>
+  	<tr>
+  		<td>
+  			Q3: =================== <br>
+  			Answer: <input type="radio" class="validate[required] Q3_yes" name="Q3" id="manager_Q3_yes"><label for="manager_Q3_yes">yes</label>／<input type="radio" class="validate[required] Q3_no" name="Q3" id="manager_Q3_no"><label for="manager_Q3_no">no</label>
+  		</td>
+  	</tr>
+  		<td>
+  			Q4: =================== <br>
+  			Answer: <input type="radio" class="validate[required] Q4_yes" name="Q4" id="manager_Q4_yes"><label for="manager_Q4_yes">yes</label>／<input type="radio" class="validate[required] Q4_no" name="Q4" id="manager_Q4_no"><label for="manager_Q4_no">no</label>
+  		</td>
+  	</tr>
+  	<tr>
+  		<td>
+  			Q5: =================== <br>
+  			Answer: <input type="radio" class="validate[required] Q5_yes" name="Q5" id="manager_Q5_yes"><label for="manager_Q5_yes">yes</label>／<input type="radio" class="validate[required] Q5_no" name="Q5" id="manager_Q5_no"><label for="manager_Q5_no">no</label>
+  		</td>
+  	</tr>
+  	<tr>
+  		<td>
+  			Q6: =================== <br>
+  			Answer: <input type="radio" class="validate[required] Q6_yes" name="Q6" id="manager_Q6_yes"><label for="manager_Q6_yes">yes</label>／<input type="radio" class="validate[required] Q6_no" name="Q6" id="manager_Q6_no"><label for="manager_Q6_no">no</label>
+  		</td>
+  	</tr>
+  </table>
+
+  <table class="questions" id="employee" class="">
+  	<tr>
+  		<td>
+  			Q1: =================== (employee)<br>
+  			Answer: <input type="radio" class="validate[required] Q1_yes" name="Q1" id="employee_Q1_yes"><label for="employee_Q1_yes">yes</label>／<input type="radio" class="validate[required] Q1_no" name="Q1" id="employee_Q1_no"><label for="employee_Q1_no">no</label>
+  		</td>
+  	</tr>
+  	<tr>
+  		<td>
+  			Q2: =================== <br>
+  			Answer: <input type="radio" class="validate[required] Q2_yes" name="Q2" id="employee_Q2_yes"><label for="employee_Q2_yes">yes</label>／<input type="radio" class="validate[required] Q2_no" name="Q2" id="employee_Q2_no"><label for="employee_Q2_no">no</label>
+  		</td>
+  	</tr>
+  	<tr>
+  		<td>
+  			Q3: =================== <br>
+  			Answer: <input type="radio" class="validate[required] Q3_yes" name="Q3" id="employee_Q3_yes"><label for="employee_Q3_yes">yes</label>／<input type="radio" class="validate[required] Q3_no" name="Q3" id="employee_Q3_no"><label for="employee_Q3_no">no</label>
+  		</td>
+  	</tr>
+  		<td>
+  			Q4: =================== <br>
+  			Answer: <input type="radio" class="validate[required] Q4_yes" name="Q4" id="employee_Q4_yes"><label for="employee_Q4_yes">yes</label>／<input type="radio" class="validate[required] Q4_no" name="Q4" id="employee_Q4_no"><label for="employee_Q4_no">no</label>
+  		</td>
+  	</tr>
+  	<tr>
+  		<td>
+  			Q5: =================== <br>
+  			Answer: <input type="radio" class="validate[required] Q5_yes" name="Q5" id="employee_Q5_yes"><label for="employee_Q5_yes">yes</label>／<input type="radio" class="validate[required] Q5_no" name="Q5" id="employee_Q5_no"><label for="employee_Q5_no">no</label>
+  		</td>
+  	</tr>
+  	<tr>
+  		<td>
+  			Q6: =================== <br>
+  			Answer: <input type="radio" class="validate[required] Q6_yes" name="Q6" id="employee_Q6_yes"><label for="employee_Q6_yes">yes</label>／<input type="radio" class="validate[required] Q6_no" name="Q6" id="employee_Q6_no"><label for="employee_Q6_no">no</label>
   		</td>
   	</tr>
   </table>
@@ -51,16 +127,24 @@
 <script type="text/javascript">
 $("form#new_record").validationEngine();
 
+$(".questions:first").show();
+
+$("#record_user_type").change(function(){
+	if($(this).val()){
+		$(".questions").hide();
+		$("#"+$(this).val()).show();
+	}
+});
+
 $("form#new_record").submit(function(){
 	var answerArray = new Array();
 	for(var i=1; i<=6; i++){
-		answerArray.push($("#Q"+i+"_yes").prop("checked"));
+		answerArray.push($(".questions:visible .Q"+i+"_yes").prop("checked"));
 	}
 	
-	var input_record_answer = $("<input>").attr("type", "hidden").attr("name", "record[answer]").val( JSON.stringify(answerArray) );
+	var input_record_answer = $("<input>").attr("type", "text").attr("name", "record[answer]").val( JSON.stringify(answerArray) );
 
 	$(this).append(input_record_answer);
-
 	return $(this).validationEngine('validate');
 });
 </script>

@@ -1,5 +1,5 @@
 G2M::Application.routes.draw do
-  resources :records
+  resources :records, :except => [:index, :show, :destroy]
   root :to => "records#new"
 
   mount_sextant if Rails.env.development?

@@ -1,7 +1,6 @@
 #encoding: utf-8
 class RecordsController < ApplicationController
-  # GET /records
-  # GET /records.json
+
   def index
     @records = Record.all
 
@@ -11,8 +10,6 @@ class RecordsController < ApplicationController
     end
   end
 
-  # GET /records/1
-  # GET /records/1.json
   def show
     @record = Record.find(params[:id])
 
@@ -22,8 +19,6 @@ class RecordsController < ApplicationController
     end
   end
 
-  # GET /records/new
-  # GET /records/new.json
   def new
     @record = Record.new
 
@@ -33,19 +28,22 @@ class RecordsController < ApplicationController
     end
   end
 
-  # GET /records/1/edit
   def edit
     @record = Record.find(params[:id])
+
+    unless(session[:record_id] && ( params[:id] == session[:record_id].to_s ) && @record)
+      redirect_to root_path, alert: "記錄不存在"
+    end
   end
 
-  # POST /records
-  # POST /records.json
   def create
     @record = Record.new(params[:record])
 
     respond_to do |format|
       if @record.save
-        format.html { redirect_to edit_record_path(@record), notice: 'Record was successfully created.' }
+        session[:record_id] = @record.id
+
+        format.html { redirect_to edit_record_path(@record) }
         format.json { render json: @record, status: :created, location: @record }
       else
         format.html { render action: "new" }
@@ -54,8 +52,6 @@ class RecordsController < ApplicationController
     end
   end
 
-  # PUT /records/1
-  # PUT /records/1.json
   def update
     @record = Record.find_by_id(params[:id])
     @signup = Signup.find_by_record_id(params[:id]) || Signup.create(:record_id => @record.id)
@@ -78,8 +74,6 @@ class RecordsController < ApplicationController
     end
   end
 
-  # DELETE /records/1
-  # DELETE /records/1.json
   def destroy
     @record = Record.find(params[:id])
     @record.destroy

@@ -1,4 +1,4 @@
-.results { display: none; }
+.questions, .results { display: none; }
 
 form h4 { margin: 2.5px 0 2.5px 0; }
 p{ margin: 2.5px 0 2.5px 0;}
