@@ -3,7 +3,14 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="Robots" content="index,follow"/>
-    <title>這裡是標題</title>
+    <title>G2M</title>
+
+    <% if(params[:controller]=="records" && (params[:action]=="new" || params[:action]=="edit") ) %>
+    <script src="/js/plugins/validation/jquery.validationEngine-zh_TW.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/plugins/validation/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="/js/plugins/validation/validationEngine.jquery.css" type="text/css"/>
+    <% end %>
+
     <meta property="og:image" content="網址/images/thumb.jpg">
     <link rel="image_src" href="網址/images/thumb.jpg">
     <link rel="stylesheet" href="/css/reset.css">
@@ -34,6 +41,13 @@ $(function(){
 });
 
 </script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    if("<%= alert || notice %>"){
+        alert("<%= alert || notice %>");
+    }
+  });
+  </script>
 </head>
 
 <body>
@@ -422,19 +436,22 @@ $("input.has_children, input.hide_children").change(function(){
 
 form.submit(function(){
 	var answerObj = new Object();
+    var answers = $(".questions:visible input[type='radio']:checked");
 
-    $(".questions:visible input[type='radio']:checked").each(function(){
+    answers.each(function(){
         answerObj[$(this).prop("name")] = $(this).val();
     });
+
+    answerObj.yes_count = answers.filter( "[value='yes']" ).length;
 
     // console.log(answerObj);
     // console.log(form.validationEngine('validate'));
 	
 	var input_record_answer = $("<input>").attr("type", "hidden").attr("name", "record[answer]").val( JSON.stringify(answerObj) );
 
-	$(this).append(input_record_answer);
+	form.append(input_record_answer);
     
-    //return false;
+    // return false;
     return $(this).validationEngine('validate');
 });
 </script>
