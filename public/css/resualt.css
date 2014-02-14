@@ -1,0 +1,42 @@
+
+#header h1{background:url(../images/s-02.png) 0 0 no-repeat;width:429px;height:198px;text-indent:-7777px;
+position:absolute;top:85px;left:112px}
+#header h1 a:hover{top:80px}
+#header .text{right:123px;top:165px}
+
+#article h3{font:900 33px 微軟正黑體,Microsoft JhengHei;line-height:1.7em}
+
+#answer{padding:25px 70px}
+#answer th{padding:10px 0;font:900 30px 微軟正黑體,Microsoft JhengHei;padding-right:20px}
+#answer td{padding:10px 0}
+#answer td div{padding:10px 0 0 0}
+#answer td b{font:900 16px 微軟正黑體,Microsoft JhengHei}
+#answer td img{margin:0 5px 0 10px;position:relative;top:3px}
+
+#answer .gray,#answer .white{padding:20px 70px 20px 0}
+#answer .gray{background:#F5F5F5}
+#answer p{color:#0068b7;font:900 16px 微軟正黑體,Microsoft JhengHei;line-height:1.7em}
+#answer p a{color:#898989;text-decoration:underline}
+#answer p a:hover{color:#2BA3D4}
+
+#proposal{background:#FFF45C;padding:45px 110px 95px 110px}
+#proposal h3{color:#0068b7}
+#proposal li{background:url(../images/s-05.gif) 0 8px no-repeat;padding:0 0 0 20px;margin:15px 0;
+font:900 16px 微軟正黑體,Microsoft JhengHei;line-height:1.7em}
+#proposal li a{color:#0068b7;text-decoration:underline;margin:0 0 0 20px}
+#proposal li a:hover{color:#2BA3D4}
+
+#form{position:relative;padding:35px 270px 0 270px}
+#form .item{position:absolute;top:-50px;left:100px}
+#form h3{color:#e4007f}
+#form p b{background:#FFF100;font-weight:900;padding:2px 5px}
+
+#form td{padding:8px 0;color:#898989;line-height:2em}
+#form td b{color:#1b1b1b;font:900 16px 微軟正黑體,Microsoft JhengHei;line-height:2em}
+#form .text{width:100%;background:#EEEEEE;border:1px solid #AAAAAA;padding:8px}
+#form a{display:inline-block;background:url(../images/r-05.png) 0 0 no-repeat;width:492px;height:66px}
+#form a:hover{background:url(../images/r-05h.png) 0 0 no-repeat}
+#form a:active{top:5px;position:relative}
+
+#note{padding:35px 155px}
+#note h4{font:900 22px 微軟正黑體,Microsoft JhengHei;line-height:1.7em}

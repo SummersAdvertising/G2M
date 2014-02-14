@@ -1,0 +1,36 @@
+
+#header h1{background:url(../images/s-02.png) 0 0 no-repeat;width:429px;height:198px;text-indent:-7777px;
+position:absolute;top:85px;left:112px}
+#header h1 a:hover{top:80px}
+#header .text{right:38px;top:158px}
+
+#article{padding:45px 115px}
+
+#article h3{color:#0068b7;font:900 33px 微軟正黑體,Microsoft JhengHei;line-height:1.7em}
+#article h3 a{color:#00a0e9;font-size:20px;margin:0 0 0 5px}
+#article h3 a:hover{text-decoration:underline}
+#article h4{font:900 20px 微軟正黑體,Microsoft JhengHei;color:#1b1b1b}
+#article h4 b{font-size:33px;line-height:1.7em;margin:0 10px 0 0;color:#eb6100}
+
+#intro p{line-height:2em;font-size:18px}
+#intro b{background:#FFF100;font-weight:900;padding:2px 5px}
+
+#tab{overflow:hidden;margin:50px 0}
+#tab li{float:left;margin:0 15px}
+#tab li a{width:265px;height:66px;display:block;font:900 24px 微軟正黑體,Microsoft JhengHei;text-align:center;
+background:url(../images/d-02.jpg) 0 0 no-repeat;color:#505050;padding:18px 0 0 0}
+#tab .active a{background:url(../images/d-02h.jpg) 0 0 no-repeat}
+
+#detect .gray{background:#F5F5F5}
+#detect th{padding:15px 0 25px 0;font:900 30px 微軟正黑體,Microsoft JhengHei}
+#detect td{padding:15px 0 25px 0}
+#detect td input{margin:0 0 0 10px}
+#detect td b{font:900 16px 微軟正黑體,Microsoft JhengHei}
+#detect td div{padding:12px 0 0 0}
+
+.second{display:none}
+
+.send {text-align:center;margin:65px 0 0 0}
+.send input{background:url(../images/d-03.jpg) 0 0 no-repeat;width:492px;height:66px;border:none;cursor:pointer}
+.send input:hover{background:url(../images/d-03h.jpg) 0 0 no-repeat}
+.send input:active{position:relative;top:3px}

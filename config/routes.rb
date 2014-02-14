@@ -1,4 +1,6 @@
 G2M::Application.routes.draw do
+  resources :tickets
+
   resources :records, :except => [:index, :show, :destroy]
   root :to => "records#new"
 
