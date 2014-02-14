@@ -1,6 +1,6 @@
 #encoding: utf-8
 class RecordsController < ApplicationController
-
+  layout nil
   def index
     @records = Record.all
 
