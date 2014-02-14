@@ -1,8 +1,10 @@
 
 /*-----------------------------------------------------------------------全域---*/
 
+
 html{background:url(/images/s-03.gif) center 0 repeat-y #2BA3D4}
 body{min-width:1165px;background:url(/images/s-01.jpg) center 0 no-repeat}
+
 a{font:300 15px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;text-decoration:none;
 -webkit-transition:all ease .3s;-moz-transition:all ease .3s}
 
@@ -11,7 +13,9 @@ a{font:300 15px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;text-decora
 /*-----------------------------------------------------------------------頁首---*/
 
 #header{height:320px;position:relative;padding:25px 0 0 0}
+
 #nav{background:url(/images/s-04.png) 0 6px no-repeat;height:32px;text-align:right;margin:0 75px;padding:0px 0 0 0}
+
 #nav a{color:#fff;display:inline-block;margin:0 0 0 40px;font:300 18px 微軟正黑體,Microsoft JhengHei}
 #nav a:hover{color:#FCEC00}
 #nav img{position:relative;top:6px}	

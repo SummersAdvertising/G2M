@@ -1,0 +1,43 @@
+
+#header .text{left:114px;top:158px}
+
+#form{line-height:2.5em;width:717px;margin:0 auto;padding:50px 0}
+#form th{font-weight:300;text-align:left}
+
+
+#form .verify p{color:#D95429;font-size:12px;display:none;}
+#form .verify img{position:relative;top:3px;margin:0 5px 0 0}
+
+#form .text{padding:0 15px}
+#form .text input{width:100%;border:1px solid #aaa;padding:5px;font:300 15px Arial,微軟正黑體,Microsoft JhengHei;color:#2B6AD2;background:#eee}
+#form .radio,#form .checkbox{padding:0 0 0 11px;color:#aaa}
+#form textarea{padding:5px;width:100%!important;min-height:150px;border:1px solid #ddd;
+font:300 15px Arial,微軟正黑體,Microsoft JhengHei;color:#2B6AD2}
+
+#form .privacy{padding:40px 0 0 0}
+/*#form .send input{background:#f1f1f1;color:#ccc;border:1px solid #ddd;width:120px;height:40px;
+text-shadow:0 1px 0 #fff;font:300 15px Arial,微軟正黑體,Microsoft JhengHei}
+#form .send .on{background:#2B6AD2;color:#fff;text-shadow:0 -1px 0 #1248A1;
+border:1px solid #1248A1;cursor:pointer}
+#form .send .on:hover{background:#1248A1}*/
+#form .send input{background:url(../images/f-04.png) 0 0 no-repeat;width:273px;height:66px;border:none;text-indent:-7777px;opacity:.3;filter:alpha(opacity=30);cursor:pointer}
+#form .send .on{opacity:1;filter:alpha(opacity=100)}
+#form .send .on:active{position:relative;top:3px}
+
+#tips{display:none;background:#f9f9f9;width:100%;border:1px dashed #aaa;padding:25px;
+font:300 13px Arial,微軟正黑體,Microsoft JhengHei;line-height:1.7em;margin:50px 0 0 0}
+#tips p span,#tips p a{color:#2B6AD2}
+#tips #copy-button{display:block;background:#2B6AD2;color:#fff;text-shadow:0 -1px 0 #1248A1;padding:15px 0 0 0;
+border:1px solid #1248A1;width:150px;height:50px;text-align:center;font:300 15px Arial,微軟正黑體,Microsoft JhengHei}
+#tips .copy-success{background:#779C40!important;text-shadow:0 -1px 0 #5E812A!important;border:1px solid #5E812A!important}
+
+#ZeroClipboardMovie_1{cursor:pointer}
+
+#tips #copy-content{padding:5px;width:100%!important;min-height:50px;border:1px solid #ddd;margin:0 0 25px 0;
+font:300 13px Arial,微軟正黑體,Microsoft JhengHei;background:#f1f1f1;color:#ccc;text-shadow:0 1px 0 #fff}
+
+#other{background:#F5F5F5;width:935px;margin:0 auto;padding:20px 65px}
+#note h4,#other h4{font:900 18px 微軟正黑體,Microsoft JhengHei;color:#505050;line-height:1.7em;padding:0 0 5px 0}
+#other a{color:#0068b7;text-decoration:underline}
+
+#note{width:935px;margin:0 auto;padding:20px 65px

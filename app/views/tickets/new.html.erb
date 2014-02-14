@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Robots" content="index,follow"/>
+<title>這裡是標題</title>
+<meta property="og:image" content="網址/images/thumb.jpg">
+<link rel="image_src" href="/images/thumb.jpg">
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/form.css">
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/auto-full-height.min.js"></script>
+<script type="text/javascript" src="/js/MSform.js"></script>
+
+<script>
+$(function(){
+  MSform("test@example.com", "Set mail title here.");
+});
+</script>
+</head>
+
+<body>
+	<%= form_for @ticket do | f | %>
+  <div id="article" _height="auto">
+    <div id="form">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th width="36%" valign="top"> <b>我有興趣的優惠方案是（可複選）</b></th>
+          <td width="64%" valign="top" class="verify"><p class="right"><img src="/images/right.png"/></p>
+            <p class="wrong"><img src="/images/wrong.png"/> 請勾選優惠方案</p></td>
+        </tr>
+        <tr>
+          <td colspan="2"  class="checkbox"><div class="boxgroup MSform" data-mailnote="我有興趣的優惠方案是：">
+              <input name="ticket[interesting_product][]" type="checkbox" value="Windows 8.1"/>
+              <span>Windows 8.1</span><br>
+              <input name="ticket[interesting_product][]" type="checkbox" value="Office 2013"/>
+              <span>Office 2013</span><br>
+              <input name="ticket[interesting_product][]" type="checkbox" value="Office 365"/>
+              <span>Office 365</span><br>
+            </div></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th width="36%" valign="top"> <b>我有興趣的電腦廠牌是（可複選）</b></th>
+          <td width="64%" valign="top" class="verify"><p class="right"><img src="/images/right.png"/></p>
+            <p class="wrong"><img src="/images/wrong.png"/> 請勾選電腦廠牌</p></td>
+        </tr>
+        <tr>
+          <td colspan="2"  class="checkbox"><div class="boxgroup MSform" data-mailnote="我有興趣的電腦廠牌是：">
+              <input name="ticket[interesting_brand][]" type="checkbox" value="HP"/>
+              <span>HP</span><br>
+              <input name="ticket[interesting_brand][]" type="checkbox" value="Asus"/>
+              <span>Asus</span><br>
+              <input name="ticket[interesting_brand][]" type="checkbox" value="Dell"/>
+              <span>Dell</span><br>
+              <input name="ticket[interesting_brand][]" type="checkbox" value="Acer"/>
+              <span>Acer</span><br>
+              <input name="ticket[interesting_brand][]" type="checkbox" value="Lenovo"/>
+              <span>Lenovo</span><br>
+              <input name="ticket[interesting_brand][]" type="checkbox" value="Gigabyte"/>
+              <span>Gigabyte</span><br>
+              <input name="ticket[interesting_brand][]" type="checkbox" value="Genuine 捷元"/>
+              <span>Genuine 捷元</span><br>
+              <input name="ticket[interesting_brand][]" type="checkbox" value="聯強 Lemel"/>
+              <span>聯強 Lemel</span><br>
+              <input name="ticket[interesting_brand][]" type="checkbox" value="msi 微星科技"/>
+              <span>msi 微星科技</span><br>
+            </div></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th width="15%" valign="top"><b>真實姓名：</b></th>
+          <td width="62%" valign="top" class="text"><input name="ticket[name]" class="MSform valid" type="text" data-mailnote="真實姓名："></td>
+          <td width="23%" valign="middle" class="verify"><p class="right"><img src="/images/right.png"/></p>
+          <p class="wrong"><img src="/images/wrong.png"/> 姓名不能為空</p></td>
+        </tr>
+        <tr>
+          <th valign="top"><b>公司名稱：</b></th>
+          <td valign="top" class="text"><input name="ticket[company]" class="MSform valid" type="text" data-mailnote="公司名稱："></td>
+          <td valign="middle" class="verify"><p class="right"><img src="/images/right.png"/></p>
+          <p class="wrong"><img src="/images/wrong.png"/> 公司名稱不能為空</p></td>
+        </tr>
+        <tr>
+          <th valign="top"><b>職稱：</b></th>
+          <td valign="top" class="text"><input name="ticket[title]" class="MSform valid" type="text" data-mailnote="職稱："></td>
+          <td valign="middle" class="verify"><p class="right"><img src="/images/right.png"/></p>
+          <p class="wrong"><img src="/images/wrong.png"/> 職稱不能為空</p></td>
+        </tr>
+        <tr>
+          <th valign="top"><b>Email：</b></th>
+          <td valign="top" class="text"><input name="ticket[email]" class="MSform valid" type="text" data-mailnote="Email：" data-valid="mail"></td>
+          <td valign="middle" class="verify"><p class="right"><img src="/images/right.png"/></p>
+          <p class="wrong"><img src="/images/wrong.png"/> 請填寫正確 Email 格式</p></td>
+        </tr>
+        <tr>
+          <th valign="top"><b>聯絡電話：</b></th>
+          <td valign="top" class="text"><input name="ticket[phone]" class="MSform valid" type="text" data-mailnote="聯絡電話：" data-valid="tel"></td>
+          <td valign="middle" class="verify"><p class="right"><img src="/images/right.png"/></p>
+          <p class="wrong"><img src="/images/wrong.png"/> 請填寫正確電話格式</p></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th width="20%" valign="top"> <b>請問您的身分是：</b></th>
+          <td width="80%" valign="top" class="verify"><p class="right"><img src="/images/right.png"/></p>
+            <p class="wrong"><img src="/images/wrong.png"/> 請勾選您的身分</p></td>
+        </tr>
+        <tr>
+          <td colspan="2"  class="radio"><div class="boxgroup MSform" data-mailnote="您的身分：">
+              <input name="ticket[activation]" type="radio" value="公司內部需要採購軟體 " />
+              <span>公司內部需要採購軟體</span><br>
+              <input name="ticket[activation]" type="radio" value="個人採購 " />
+              <span>個人採購</span><br>
+              <input name="ticket[activation]" type="radio" value="本身是經銷商，幫客戶詢問" />
+              <span>本身是經銷商，幫客戶詢問</span><br>
+              <input name="ticket[activation]" type="radio" value="幫朋友詢問" />
+              <span>幫朋友詢問</span> </div></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th width="60%" valign="top"><b>請問公司（台灣辦公室）擁有的 PC 台數？（含桌機和筆電）</b></th>
+          <td width="19%" valign="top" class="text"><input name="ticket[computer_num]" class="MSform valid" type="text" style="text-align:center;width:75px" data-mailnote="公司擁有的 PC 台數：" data-valid="number">            台</td>
+          <td width="21%" valign="middle" class="verify"><p class="right"><img src="/images/right.png"/></p>
+            <p class="wrong"><img src="/images/wrong.png"/> 請填寫擁有的 PC 台數</p></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th width="65%" valign="top"> <b>請問目前貴公司的 PC / NB 的作業系統版本為？（可複選）</b></th>
+          <td width="35%" valign="top" class="verify"><p class="right"><img src="/images/right.png"/></p>
+            <p class="wrong"><img src="/images/wrong.png"/> 請勾選作業系統版本</p></td>
+        </tr>
+        <tr>
+          <td colspan="2"  class="checkbox"><div class="boxgroup MSform" data-mailnote="目前貴公司電腦的作業系統版本：">
+              <input name="ticket[existing_os][]" type="checkbox" value="Windows XP Professional"/>
+              <span>Windows XP Professional</span><br>
+              <input name="ticket[existing_os][]" type="checkbox" value="Windows Vista"/>
+              <span>Windows Vista</span><br>
+              <input name="ticket[existing_os][]" type="checkbox" value="Windows 7"/>
+              <span>Windows 7</span><br>
+              <input name="ticket[existing_os][]" type="checkbox" value="Windows 8"/>
+              <span>Windows 8</span><br>
+              <input name="ticket[existing_os][]" type="checkbox" value="Windows 8.1"/>
+              <span>Windows 8.1</span><br>
+              <input name="ticket[existing_os][]" type="checkbox" value="Linux"/>
+              <span>Linux</span><br>
+              <input name="ticket[existing_os][]" type="checkbox" value="其他"/>
+              <span>其他</span> </div></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th width="55%" valign="top"><span style="color:#000"><b>請問目前貴公司的文書作業系統版本為？（可複選）</b></span></th>
+          <td width="45%" valign="top" class="verify"><p class="right"><img src="/images/right.png"/></p>
+            <p class="wrong"><img src="/images/wrong.png"/> 請勾選文書作業系統版本</p></td>
+        </tr>
+        <tr>
+          <td colspan="2"  class="checkbox"><div class="boxgroup MSform" data-mailnote="文書作業系統版本：">
+              <input name="ticket[office_version][]" type="checkbox" value="Office 2003"/>
+              <span>Office 2003</span><br>
+              <input name="ticket[office_version][]" type="checkbox" value="Office 2007"/>
+              <span>Office 2007</span><br>
+              <input name="ticket[office_version][]" type="checkbox" value="Office 2010"/>
+              <span>Office 2010</span><br>
+              <input name="ticket[office_version][]" type="checkbox" value="Office 2013"/>
+              <span>Office 2013</span><br>
+              <input name="ticket[office_version][]" type="checkbox" value="其他"/>
+              <span>其他</span> </div></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th width="61%" valign="top"> <b>請問貴公司在未來 6 個月內，是否有計劃升級作業系統？</b></th>
+          <td width="39%" valign="top" class="verify"><p class="right"><img src="/images/right.png"/></p>
+            <p class="wrong"><img src="/images/wrong.png"/> 請勾選是否有計劃升級作業系統</p></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="radio"><div class="boxgroup MSform" data-mailnote="未來 6 個月內，是否有計劃升級作業系統：">
+              <input name="ticket[updating]" type="radio" value="是" />
+              <span>是</span><br>
+              <input name="ticket[updating]" type="radio" value="否" />
+              <span>否</span><br>
+              <input name="ticket[updating]" type="radio" value="不知道" />
+              <span>不知道</span> </div></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th width="51%" valign="top"> <b>請問您是否會帶自己的電腦／平板在公司工作？</b></th>
+          <td width="49%" valign="top" class="verify"><p class="right"><img src="/images/right.png"/></p>
+            <p class="wrong"><img src="/images/wrong.png"/> 請勾選是否會帶自己的電腦／平板在公司工作</p></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="radio"><div class="boxgroup MSform" data-mailnote="是否會帶自己的電腦／平板在公司工作：">
+              <input name="ticket[working]" type="radio" value="是" />
+              <span>是</span><br>
+              <input name="ticket[working]" type="radio" value="否" />
+              <span>否</span><br>
+            </div></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="center" class="privacy"><input id="acceptPrivacy" type="checkbox" value="[ 我已同意隱私權聲明 ]"/>
+            我同意以下隱私權聲明 </td>
+        </tr>
+        <tr>
+          <td align="center" class="send"><input id="contactSend" type="submit" value="送出" disabled/></td>
+        </tr>
+      </table>
+    </div>
+    
+    </div>
+  <% end %>
+  <!--article-->
+<!-- START OF SmartSource Data Collector TAG --> 
+<!-- Copyright (c) 1996-2009 WebTrends Inc.  All rights reserved. --> 
+<!-- Version: MS.3.0.0 --> 
+<script src="http://js.microsoft.com/library/mnp/2/wt/js/wt.js" type="text/javascript"></script> 
+
+<!-- ----------------------------------------------------------------------------------- --> 
+<!-- Warning: The two script blocks below must remain inline. Moving them to an external --> 
+<!-- JavaScript include file can cause serious problems with cross-domain tracking.      --> 
+<!-- ----------------------------------------------------------------------------------- --> 
+<script type="text/javascript">
+//<![CDATA[
+var _tag=new WebTrends();
+_tag.dcsid="dcsjwb9vb00000c932fd0rjc7_5p3t";
+// _tag.fpcdom=".domain.com";
+_tag.dcsGetId();
+_tag.trackevents=true;
+//]]>>
+</script> 
+<script type="text/javascript">
+//<![CDATA[
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect();
+//]]>>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=MS.3.0.0"/></div>
+</noscript>
+<!-- END OF SmartSource Data Collector TAG -->
+</body>
+</html>
