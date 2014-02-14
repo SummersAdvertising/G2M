@@ -1,31 +1,54 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="Robots" content="index,follow"/>
-	<title>G2M</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Robots" content="index,follow"/>
+    <title>G2M</title>
 
-	<%= javascript_include_tag "application" %>
-	<%= csrf_meta_tags %>
-
-    <script src="/js/plugins/validation/jquery.validationEngine-zh_TW.js" type="text/javascript" charset="utf-8"></script>
+    <% if(params[:controller]=="records" && (params[:action]=="new" || params[:action]=="edit") ) %>
     <script src="/js/plugins/validation/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/plugins/validation/jquery.validationEngine-zh_TW.js" type="text/javascript" charset="utf-8"></script>
+    
     <link rel="stylesheet" href="/js/plugins/validation/validationEngine.jquery.css" type="text/css"/>
+    <% end %>
 
-    <meta property="og:/image" content="網址/images/thumb.jpg">
-	<link rel="/image_src" href="網址/images/thumb.jpg">
-	<link rel="stylesheet" href="/css/reset.css">
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/css/result.css">
-	<script src="/js/auto-full-height.min.js"></script>
+    <meta property="og:image" content="網址/images/thumb.jpg">
+    <link rel="image_src" href="網址/images/thumb.jpg">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/result.css">
+    <script src="/js/auto-full-height.min.js"></script>
+    <script>
+$(function(){ 
+  var _showTab = 0;
+  var $defaultLi = $('#tab ul li').eq(_showTab).addClass('active');
+  
+  $($defaultLi.find('a').attr('href')).siblings().hide();
+  
+  $('#tab ul li').click(function(e) {
+    e.preventDefault();
 
-	<script type="text/javascript">
-	$(document).ready(function(){
-		if("<%= alert || notice %>"){
-			alert("<%= alert || notice %>");
-		}
-	});
-	</script>
+    var $this = $(this),
+      _clickTab = $this.find('a');
+    $this.addClass('active').siblings('.active').removeClass('active');   
+    $(_clickTab.attr('href')).stop(false, true).fadeIn(1000).siblings().hide();
+
+    $("#record_user_type").val( _clickTab.data("value") );
+
+    return false;
+  }).find('a').focus(function(){
+    this.blur();
+  });
+});
+
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    if("<%= alert || notice %>"){
+        alert("<%= alert || notice %>");
+    }
+  });
+  </script>
 </head>
 
 <body>
@@ -135,7 +158,7 @@
 							<b>真實姓名</b>
 						</td>
 						<td width="87%">
-							<%= text_field_tag "signup[name]", nil, :class => "validate[required]" %>
+							<%= text_field_tag "signup[name]", nil, :class => "validate[required] text" %>
 						</td>
 					</tr>
 					<tr>
