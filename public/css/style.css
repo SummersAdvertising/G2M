@@ -2,7 +2,7 @@
 /*-----------------------------------------------------------------------全域---*/
 
 html{background:url(../images/s-03.gif) center 0 repeat-y #2BA3D4}
-body{min-width:1165px;background:url(../images/s-01.jpg) center 0 no-repeat}
+body{min-width:1165px;background:url(../images/s-01.jpg) center 0 no-repeat;font:300 15px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;color:#313131}}
 a{font:300 15px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;text-decoration:none;
 -webkit-transition:all ease .3s;-moz-transition:all ease .3s}
 
