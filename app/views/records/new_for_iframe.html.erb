@@ -3,7 +3,26 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="Robots" content="index,follow"/>
-    <title>G2M</title>
+    <meta name="ms.locale" content="zh-tw">
+    <meta name="WT.sp" content="_taiwan_promo_eq_Get2Modern_" />
+    <meta name="WT.z_locale" content="zh-tw"/ >
+
+    <meta name="keywords" content="Windows XP終止支援,Office 2003終止支援,EOS,XP終止支援,XP EOS,中小企業優惠,Windows平板,Office 2013,Office 365,Windows 8.1,win 8.1,win 7, win 8"/>
+    <title>老闆囧很大－職場微心結大調查，參加就抽無線劇院！</title>
+    <meta name="description" content="老闆、員工悶氣別再憋了！快來填秘密問卷一吐為快，不但立即獲得實用解方，化解職場微心結，還可抽最大獎無線劇院，更有優惠方案幫您輕鬆升級最新科技，就算 Windows XP / Office 2003 將於 2014/4/8 終止支援也不囧。"/>
+    <meta property="og:site_name" content="老闆囧很大"/>
+    <meta property="og:title" content="老闆囧很大－職場微心結大調查，參加就抽無線劇院！"/>
+    <meta property="og:description" content="老闆、員工悶氣別再憋了！快來填秘密問卷一吐為快，不但立即獲得實用解方，化解職場微心結，還可抽最大獎無線劇院，更有優惠方案幫您輕鬆升級最新科技，就算 Windows XP / Office 2003 將於 2014/4/8 終止支援也不囧。"/>
+    <meta property="og:type" content="product"/>
+
+    <meta name="DC.Rights" content="台灣微軟"/>
+    <meta name="DC.Date" content="2014/02/18"/>
+    <meta name="DC.Language" scheme="W3CDTF" content="zh-TW"/>
+    <meta name="DC.Subject" content="老闆囧很大－職場微心結大調查"/>
+    <meta name="DC.Type" content="產品"/>
+
+    <meta property="og:image" content="http://www.microsoft.com/taiwan/promo/eq/Get2Modern/images/thumb.jpg">
+    <link rel="image_src" href="http://www.microsoft.com/taiwan/promo/eq/Get2Modern/images/thumb.jpg">
 
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
@@ -14,15 +33,13 @@
     
     <link rel="stylesheet" href="/js/plugins/validation/validationEngine.jquery.css" type="text/css"/>
 
-    <meta property="og:image" content="網址/images/thumb.jpg">
-    <link rel="image_src" href="網址/images/thumb.jpg">
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/detect.css">
-    <script src="/js/auto-full-height.min.js"></script>
+    <!-- <script src="/js/auto-full-height.min.js"></script> -->
+    <script src="/js/iframeheight.js"></script>
 
     <style type="text/css">
-    html, body{ background: none; }
     .questions { display: none; }
     </style>
 
@@ -50,6 +67,7 @@ $(function(){
 </script>
 <script type="text/javascript">
   $(document).ready(function(){
+
     if("<%= alert || notice %>"){
         alert("<%= alert || notice %>");
     }
@@ -59,6 +77,11 @@ $(function(){
 
 <body data-height="">
     <div id="wrapper">
+        <div id="header" _height="none">
+            <h1>老闆囧很大</h1>
+            <div class="text"><img src="/images/d-01.png"/></div>
+        </div>
+        <!--header-->
         <div id="article" _height="auto">
             <%= form_for(@record) do |f| %>
             <%= f.hidden_field(:user_type) %>
@@ -493,11 +516,9 @@ $(function(){
         </div>
         <!--article-->
         <% end %>
-    </div>  
+    </div>
 </body>
 <script type="text/javascript">
-$("body").attr("data-height", $("body").height()+"px");
-
 var form = $("form#new_record");
 form.validationEngine();
 
@@ -534,5 +555,10 @@ form.submit(function(){
     return $(this).validationEngine('validate');
 });
 </script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $.iframeHeightExternal();
+  });
+  </script>
 </html>
 
