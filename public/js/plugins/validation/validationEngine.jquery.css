@@ -3,6 +3,7 @@
 
 /* Z-INDEX */
  .formError { z-index: 990; }
+
     .formError .formErrorContent { z-index: 991; }
     .formError .formErrorArrow { z-index: 996; }
 

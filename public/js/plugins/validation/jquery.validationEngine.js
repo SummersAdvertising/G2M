@@ -337,7 +337,6 @@
 			form.trigger("jqv.form.validating");
 			// first, evaluate status of non ajax fields
 			var first_err=null;
-			console.log(form.find('['+options.validateAttribute+'*=validate]'))
 			form.find('['+options.validateAttribute+'*=validate]').not(":disabled").each( function() {
 				var field = $(this);
 				var names = [];
