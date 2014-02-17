@@ -124,6 +124,7 @@
 						options.onSuccess();
 					} else if (!valid && options.onFailure) {
 						options.onFailure();
+
 					}
 				}
 			} else if (element.is('form') || element.hasClass('validationEngineContainer')) {
@@ -134,8 +135,10 @@
 					options = (form.data('jqv')) ? form.data('jqv') : $.validationEngine.defaults,
 					valid = methods._validateField(element, options);
 
-				if (valid && options.onFieldSuccess)
+				if (valid && options.onFieldSuccess){
 					options.onFieldSuccess();
+				}
+					
 				else if (options.onFieldFailure && options.InvalidFields.length > 0) {
 					options.onFieldFailure();
 				}
@@ -144,6 +147,7 @@
 				// !! ensures that an undefined return is interpreted as return false but allows a onValidationComplete() to possibly return true and have form continue processing
 				return !!options.onValidationComplete(form, valid);
 			}
+
 			return valid;
 		},
 		/**
@@ -333,6 +337,7 @@
 			form.trigger("jqv.form.validating");
 			// first, evaluate status of non ajax fields
 			var first_err=null;
+			console.log(form.find('['+options.validateAttribute+'*=validate]'))
 			form.find('['+options.validateAttribute+'*=validate]').not(":disabled").each( function() {
 				var field = $(this);
 				var names = [];
@@ -1492,8 +1497,9 @@
 		_ajaxError: function(data, transport) {
 			if(data.status == 0 && transport == null)
 				alert("The page is not served from a server! ajax call failed");
-			else if(typeof console != "undefined")
-				console.log("Ajax error: " + data.status + " " + transport);
+			else if(typeof console != "undefined"){
+				//console.log("Ajax error: " + data.status + " " + transport);
+			}
 		},
 		/**
 		* date -> string
