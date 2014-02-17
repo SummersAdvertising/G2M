@@ -40,6 +40,7 @@
     <script src="/js/iframeheight.js"></script>
 
     <style type="text/css">
+    html, body { background: none; }
     .questions { display: none; }
     </style>
 
@@ -53,7 +54,7 @@
   </script>
 </head>
 
-<body data-height="">
+<body>
     <div id="wrapper">
         <div id="header" _height="none">
             <h1>老闆囧很大</h1>
@@ -496,44 +497,7 @@
         <% end %>
     </div>
 </body>
-<script type="text/javascript">
-var form = $("form#new_record");
-form.validationEngine();
 
-$("input.has_children, input.hide_children").change(function(){
-    var $this = $(this)
-    if( $this.is(":checked") ){
-        switch($this.is(".has_children")) {
-            case true:
-            $this.parent().next('.second').stop().show(500).children("input").addClass("validate[required]");
-            break;
-
-            case false:
-            $this.parent().next('.second').stop().hide(500).children("input").removeClass("validate[required]").prop("checked", false);
-            break;
-        }
-    }
-});
-
-form.submit(function(){
-    var answerObj = new Object();
-    var answers = $(".questions:visible input[type='radio']:checked");
-
-    answers.each(function(){
-        answerObj[$(this).prop("name")] = $(this).val();
-    });
-
-    answerObj.yes_count = answers.filter( "[value='yes']" ).length;
-    
-    var input_record_answer = $("<input>").attr("type", "hidden").attr("name", "record[answer]").val( JSON.stringify(answerObj) );
-    var input_record_type = $("<input>").attr("type", "hidden").attr("name", "from").val("iframe");
-
-    form.append(input_record_answer).append(input_record_type);
-    
-    // return false;
-    return $(this).validationEngine('validate');
-});
-</script>
 <script type="text/javascript">
   $(document).ready(function(){
     var iframeExt = $.iframeHeightExternal();
@@ -557,6 +521,45 @@ form.submit(function(){
     }).find('a').focus(function(){
         this.blur();
     });
+
+    var form = $("form#new_record");
+form.validationEngine();
+
+$("input.has_children, input.hide_children").change(function(){
+    var $this = $(this)
+    if( $this.is(":checked") ){
+        switch($this.is(".has_children")) {
+            case true:
+            $this.parent().next('.second').stop().show(500).children("input").addClass("validate[required]");
+            break;
+
+            case false:
+            $this.parent().next('.second').stop().hide(500).children("input").removeClass("validate[required]").prop("checked", false);
+            break;
+        }
+    }
+
+    iframeExt.update();
+});
+
+form.submit(function(){
+    var answerObj = new Object();
+    var answers = $(".questions:visible input[type='radio']:checked");
+
+    answers.each(function(){
+        answerObj[$(this).prop("name")] = $(this).val();
+    });
+
+    answerObj.yes_count = answers.filter( "[value='yes']" ).length;
+    
+    var input_record_answer = $("<input>").attr("type", "hidden").attr("name", "record[answer]").val( JSON.stringify(answerObj) );
+    var input_record_type = $("<input>").attr("type", "hidden").attr("name", "from").val("iframe");
+
+    form.append(input_record_answer).append(input_record_type);
+    
+    // return false;
+    return $(this).validationEngine('validate');
+});
 
   });
   </script>
