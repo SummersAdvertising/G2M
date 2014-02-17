@@ -31,6 +31,7 @@
     <script src="/js/plugins/validation/jquery.validationEngine-zh_TW.js"></script>
     
     <link rel="stylesheet" href="/js/plugins/validation/validationEngine.jquery.css" type="text/css"/>
+
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/result.css">
@@ -43,6 +44,9 @@
     #header{height:242px}
     #header h1{top:5px}
     #header .text{top:78px;right:40px}
+    .formError .formErrorContent{top:35px!important}
+    .formError{left:130px!important;}
+
     </style>
 
     <script>
@@ -115,7 +119,7 @@ $(function(){
 								<% if (@record.user_type == "worker" && [1, 3].include?(i)) %>
 								<div>
 									<%= @resolutions["Q#{i}_2_sub"] %>
-									<img src="images/r-03.png"/><b><%= @record_answers["#{@record.user_type}_Q#{i}_2"] == "yes" ? "是" : @record_answers["#{@record.user_type}_Q#{i}_2"] %></b>
+									<img src="/images/r-03.png"/><b><%= @record_answers["#{@record.user_type}_Q#{i}_2"] == "yes" ? "是" : @record_answers["#{@record.user_type}_Q#{i}_2"] %></b>
 								</div>
 								<% end %>
 							</td>
@@ -371,7 +375,7 @@ $("a#link_fb").click(function(e){
 
 	if( $("form#edit_record_<%= @record.id %>").validationEngine('validate') ){
 		FB.login(function(){
-			FB.api('/me/feed', 'post', {message: '老闆囧很大－職場微心結大調查，參加就抽無線劇院！', description: '老闆、員工悶氣別再憋了！快來填秘密問卷一吐為快，不但立即獲得實用解方，化解職場微心結，還可抽最大獎無線劇院，更有優惠方案幫您輕鬆升級最新科技，就算 Windows XP / Office 2003 將於 2014/4/8 終止支援也不囧。', picture: "https://www.midsummer.me/images/thumbv3.jpg"},function (response) {
+			FB.api('/me/feed', 'post', {message: '老闆囧很大－職場微心結大調查，參加就抽無線劇院！', description: '老闆、員工悶氣別再憋了！快來填秘密問卷一吐為快，不但立即獲得實用解方，化解職場微心結，還可抽最大獎無線劇院，更有優惠方案幫您輕鬆升級最新科技，就算 Windows XP / Office 2003 將於 2014/4/8 終止支援也不囧。', picture: "https://www.midsummer.me/images/thumbv3.jpg", link: "http://www.microsoft.com/taiwan/promo/eq/Get2Modern"},function (response) {
 				if (response && response.id) {
 					//share to FB successfully, update record
 					$("input#record_fbshare_id").val(response.id);

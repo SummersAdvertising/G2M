@@ -28,6 +28,8 @@
 	display: block;
 	cursor: pointer;
 	text-align: left;
+	opacity: 1!important;
+	filter:alpha(opacity=100)!important;
 }
 
 .formError.inline {
@@ -68,7 +70,7 @@
         box-shadow:none!important;
         -webkit-box-shadow:none!important;
         -o-box-shadow:none!important;
-        top:-15px!important;
+        
         text-align:center!important;
         padding:4px 10px 0 10px!important;
         background:#EB6100!important
@@ -99,6 +101,7 @@
 	width: 15px;
 	margin: -2px 0 0 13px;
 	position:relative;
+	display:none;
 }
 body[dir='rtl'] .formError .formErrorArrow,
 body.rtl .formError .formErrorArrow {

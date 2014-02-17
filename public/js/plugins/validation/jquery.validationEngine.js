@@ -707,7 +707,7 @@
 
 				// If we have a string, that means that we have an error, so add it to the error message.
 				if (typeof errorMsg == 'string') {
-					promptText += errorMsg + "<br/>";
+					promptText += errorMsg + " ";
 					options.isError = true;
 					field_errors++;
 				}
