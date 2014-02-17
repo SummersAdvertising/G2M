@@ -79,7 +79,7 @@ $(function(){
 			<% if (@record_answers && @record_answers["yes_count"] && (@record_answers["yes_count"] > 0) ) %>
 			<div id="answer">
 				<% for i in 1..6 do %>
-				<% if @record_answers["#{@user_type}_Q#{i}"] == "yes" %>
+				<% if @record_answers["#{@record.user_type}_Q#{i}"] == "yes" %>
 				<div>
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
 						<tr>
@@ -87,22 +87,22 @@ $(function(){
 							<td width="91%" valign="top">
 								<div> <b><%= @resolutions["Q#{i}_title"] %></b>
 									<%= @resolutions["Q#{i}_sub"] %>
-									<img src="/images/r-03.png"/> <b><%= @record_answers["#{@user_type}_Q#{i}"] == "yes" ? "是" : @record_answers["#{@user_type}_Q#{i}"] %></b>
+									<img src="/images/r-03.png"/> <b><%= @record_answers["#{@record.user_type}_Q#{i}"] == "yes" ? "是" : @record_answers["#{@record.user_type}_Q#{i}"] %></b>
 								</div>
 
 								<!-- 顯示子小題題目與回答 -->
 
-								<% if (@user_type == "admin" && [1, 2, 3, 4, 6].include?(i)) || (@user_type == "worker" && [1, 3, 4, 5].include?(i)) %>
+								<% if (["owner", "manager"].include?(@record.user_type) && [1, 2, 3, 4, 6].include?(i)) || (@record.user_type == "worker" && [1, 3, 4, 5].include?(i)) %>
 								<div>
 									<%= @resolutions["Q#{i}_1_sub"] %>
-									<img src="/images/r-03.png"/><b><%= @record_answers["#{@user_type}_Q#{i}_1"] == "yes" ? "是" : @record_answers["#{@user_type}_Q#{i}_1"] %></b>
+									<img src="/images/r-03.png"/><b><%= @record_answers["#{@record.user_type}_Q#{i}_1"] == "yes" ? "是" : @record_answers["#{@record.user_type}_Q#{i}_1"] %></b>
 								</div>
 								<% end %>
 
-								<% if (@user_type == "worker" && [1, 3].include?(i)) %>
+								<% if (@record.user_type == "worker" && [1, 3].include?(i)) %>
 								<div>
 									<%= @resolutions["Q#{i}_2_sub"] %>
-									<img src="images/r-03.png"/><b><%= @record_answers["#{@user_type}_Q#{i}_2"] == "yes" ? "是" : @record_answers["#{@user_type}_Q#{i}_2"] %></b>
+									<img src="images/r-03.png"/><b><%= @record_answers["#{@record.user_type}_Q#{i}_2"] == "yes" ? "是" : @record_answers["#{@record.user_type}_Q#{i}_2"] %></b>
 								</div>
 								<% end %>
 							</td>
@@ -127,7 +127,7 @@ $(function(){
 				<ul>
 					<% for i in 1..6 do %>
 					<li>
-					<% if @record_answers["#{@user_type}_Q#{i}"] == "yes" %>
+					<% if @record_answers["#{@record.user_type}_Q#{i}"] == "yes" %>
 					<%= @understandings["Q#{i}"].html_safe %>
 					<% end #if %>
 					</li>

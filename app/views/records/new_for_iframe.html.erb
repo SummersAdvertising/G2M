@@ -9,31 +9,27 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
 
-
-    <% if(params[:controller]=="records" && (params[:action]=="new" || params[:action]=="edit") ) %>
     <script src="/js/plugins/validation/jquery.validationEngine.js"></script>
     <script src="/js/plugins/validation/jquery.validationEngine-zh_TW.js"></script>
     
     <link rel="stylesheet" href="/js/plugins/validation/validationEngine.jquery.css" type="text/css"/>
-    <% end %>
 
     <meta property="og:image" content="網址/images/thumb.jpg">
     <link rel="image_src" href="網址/images/thumb.jpg">
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/detect.css">
+    <script src="/js/auto-full-height.min.js"></script>
 
     <style type="text/css">
-    html, body { background: none; }
+    html, body{ background: none; }
+    .questions { display: none; }
     </style>
 
-    <script src="/js/auto-full-height.min.js"></script>
     <script>
 $(function(){ 
   var _showTab = 0;
-  var $defaultLi = $('#tab ul li').eq(_showTab).addClass('active');
-  
-  $($defaultLi.find('a').attr('href')).siblings().hide();
+  var $defaultLi = $('#tab ul li').eq(_showTab);
   
   $('#tab ul li').click(function(e) {
     e.preventDefault();
@@ -65,9 +61,7 @@ $(function(){
     <div id="wrapper">
         <div id="article" _height="auto">
             <%= form_for(@record) do |f| %>
-
-            <%= f.hidden_field :answer %>
-            <%= f.hidden_field(:user_type, value: "owner") %>
+            <%= f.hidden_field(:user_type) %>
 
             <div id="intro">
                 <h3>
@@ -99,7 +93,7 @@ $(function(){
                 </ul>
             </div>
             <div id="detect">
-                <div class="questions owner manager">
+                <div class="questions owner">
                     <h4> <b>請問老闆</b>
                         員工哪些表現讓您覺得很囧、看不慣？
                     </h4>
@@ -110,19 +104,19 @@ $(function(){
                                 <div class="first">
                                     <b>難管的員工 ──</b>
                                     公司比較優秀的員工都用自己的電腦工作，資料檔案無法掌控，真可怕
-                                    <input type="radio" class="validate[required] has_children" name="admin_Q1" id="admin_Q1_yes" value="yes">
-                                    <label for="admin_Q1_yes"><b>是</b></label>
-                                    <input type="radio" class="validate[required] hide_children" name="admin_Q1" id="admin_Q1_no" value="no">
-                                    <label for="admin_Q1_no"><b>否</b></label>
+                                    <input type="radio" class="validate[required] has_children" name="owner_Q1" id="owner_Q1_yes" value="yes">
+                                    <label for="owner_Q1_yes"><b>是</b></label>
+                                    <input type="radio" class="validate[required] hide_children" name="owner_Q1" id="owner_Q1_no" value="no">
+                                    <label for="owner_Q1_no"><b>否</b></label>
                                 </div>
                                 <div class="second">
                                     請問您公司自帶電腦或平板的員工，人數比例大約是：
-                                    <input type="radio" name="admin_Q1_1" id="admin_Q1_1_1" value="20% 以下">
-                                    <label for="admin_Q1_1_1"><b>20% 以下</b></label>
-                                    <input type="radio" name="admin_Q1_1" id="admin_Q1_1_2" value="20 - 50%">
-                                    <label for="admin_Q1_1_2"><b>20 - 50%</b></label>
-                                    <input type="radio" name="admin_Q1_1" id="admin_Q1_1_3" value="50% 以上">
-                                    <label for="admin_Q1_1_3"><b>50% 以上</b></label>
+                                    <input type="radio" name="owner_Q1_1" id="owner_Q1_1_1" value="20% 以下">
+                                    <label for="owner_Q1_1_1"><b>20% 以下</b></label>
+                                    <input type="radio" name="owner_Q1_1" id="owner_Q1_1_2" value="20 - 50%">
+                                    <label for="owner_Q1_1_2"><b>20 - 50%</b></label>
+                                    <input type="radio" name="owner_Q1_1" id="owner_Q1_1_3" value="50% 以上">
+                                    <label for="owner_Q1_1_3"><b>50% 以上</b></label>
                                 </div>
                             </td>
                         </tr>
@@ -132,17 +126,17 @@ $(function(){
                                 <div class="first">
                                     <b>善變的員工 ──</b>
                                     員工一季換一支手機，說這樣才跟得上時代，不過我總覺得東西好好的還沒壞，就不用換
-                                    <input type="radio" class="validate[required] has_children" name="admin_Q2" id="admin_Q2_yes" value="yes">
-                                    <label for="admin_Q2_yes"><b>是</b></label>
-                                    <input type="radio" class="validate[required] hide_children" name="admin_Q2" id="admin_Q2_no" value="no">
-                                    <label for="admin_Q2_no"><b>否</b></label>
+                                    <input type="radio" class="validate[required] has_children" name="owner_Q2" id="owner_Q2_yes" value="yes">
+                                    <label for="owner_Q2_yes"><b>是</b></label>
+                                    <input type="radio" class="validate[required] hide_children" name="owner_Q2" id="owner_Q2_no" value="no">
+                                    <label for="owner_Q2_no"><b>否</b></label>
                                 </div>
                                 <div class="second">
                                     請問您公司是否仍然在使用 Windows XP？
-                                    <input type="radio" name="admin_Q2_1" id="admin_Q2_1_1" value="yes">
-                                    <label for="admin_Q2_1_1"><b>是</b></label>
-                                    <input type="radio" name="admin_Q2_1" id="admin_Q2_1_2" value="no">
-                                    <label for="admin_Q2_1_2"><b>否</b></label>
+                                    <input type="radio" name="owner_Q2_1" id="owner_Q2_1_1" value="yes">
+                                    <label for="owner_Q2_1_1"><b>是</b></label>
+                                    <input type="radio" name="owner_Q2_1" id="owner_Q2_1_2" value="no">
+                                    <label for="owner_Q2_1_2"><b>否</b></label>
            
                             </td>
                         </tr>
@@ -154,19 +148,19 @@ $(function(){
                                     員工常把自己的隨身碟隨手亂放，我不想一直嘮叨這種「小事」，卻又擔心裡面其實裝的是公司檔案，
                                     <br />
                                     一旦外流…
-                                    <input type="radio" class="validate[required] has_children" name="admin_Q3" id="admin_Q3_yes" value="yes">
-                                    <label for="admin_Q3_yes"><b>是</b></label>
-                                    <input type="radio" class="validate[required] hide_children" name="admin_Q3" id="admin_Q3_no" value="no">
-                                    <label for="admin_Q3_no"><b>否</b></label>
+                                    <input type="radio" class="validate[required] has_children" name="owner_Q3" id="owner_Q3_yes" value="yes">
+                                    <label for="owner_Q3_yes"><b>是</b></label>
+                                    <input type="radio" class="validate[required] hide_children" name="owner_Q3" id="owner_Q3_no" value="no">
+                                    <label for="owner_Q3_no"><b>否</b></label>
                                 </div>
                                 <div class="second">
                                     請您估計一下，公司檔案大約放在幾支隨身碟、外接硬碟裡？
-                                    <input type="radio" name="admin_Q3_1" id="admin_Q3_1_1" value="5 支以下">
-                                    <label for="admin_Q3_1_1"><b>5 支以下</b></label>
-                                    <input type="radio" name="admin_Q3_1" id="admin_Q3_1_2" value="5~20 支">
-                                    <label for="admin_Q3_1_2"><b>5~20 支</b></label>
-                                    <input type="radio" name="admin_Q3_1" id="admin_Q3_1_3" value="20 支以上">
-                                    <label for="admin_Q3_1_3"><b>20 支以上</b></label>
+                                    <input type="radio" name="owner_Q3_1" id="owner_Q3_1_1" value="5 支以下">
+                                    <label for="owner_Q3_1_1"><b>5 支以下</b></label>
+                                    <input type="radio" name="owner_Q3_1" id="owner_Q3_1_2" value="5~20 支">
+                                    <label for="owner_Q3_1_2"><b>5~20 支</b></label>
+                                    <input type="radio" name="owner_Q3_1" id="owner_Q3_1_3" value="20 支以上">
+                                    <label for="owner_Q3_1_3"><b>20 支以上</b></label>
                                 </div>
                             </td>
                         </tr>
@@ -176,17 +170,17 @@ $(function(){
                                 <div class="first">
                                     <b>花俏的員工 ──</b>
                                     現在的員工老是想要「時尚」「個人風格」的辦公設備，都不考慮對工作是否實用
-                                    <input type="radio" class="validate[required] has_children" name="admin_Q4" id="admin_Q4_yes" value="yes">
-                                    <label for="admin_Q4_yes"><b>是</b></label>
-                                    <input type="radio" class="validate[required] hide_children" name="admin_Q4" id="admin_Q4_no" value="no">
-                                    <label for="admin_Q4_no"><b>否</b></label>
+                                    <input type="radio" class="validate[required] has_children" name="owner_Q4" id="owner_Q4_yes" value="yes">
+                                    <label for="owner_Q4_yes"><b>是</b></label>
+                                    <input type="radio" class="validate[required] hide_children" name="owner_Q4" id="owner_Q4_no" value="no">
+                                    <label for="owner_Q4_no"><b>否</b></label>
                                 </div>
                                 <div class="second">
                                     請問員工是否有將自己的平板或智慧型手機應用於工作？
-                                    <input type="radio" name="admin_Q4_1" id="admin_Q4_1_1" value="yes">
-                                    <label for="admin_Q4_1_1"><b>是</b></label>
-                                    <input type="radio" name="admin_Q4_1" id="admin_Q4_1_2" value="no">
-                                    <label for="admin_Q4_1_2"><b>否</b></label>
+                                    <input type="radio" name="owner_Q4_1" id="owner_Q4_1_1" value="yes">
+                                    <label for="owner_Q4_1_1"><b>是</b></label>
+                                    <input type="radio" name="owner_Q4_1" id="owner_Q4_1_2" value="no">
+                                    <label for="owner_Q4_1_2"><b>否</b></label>
                                 </div>
                             </td>
                         </tr>
@@ -196,10 +190,10 @@ $(function(){
                                 <div>
                                     <b>質疑我的商業直覺的員工 ──</b>
                                     員工很「勇於表達」，難道為了讓他們心服口服，我還要花時間找證據嗎？
-                                    <input type="radio" class="validate[required]" name="admin_Q5" id="admin_Q5_yes" value="yes">
-                                    <label for="admin_Q5_yes"><b>是</b></label>
-                                    <input type="radio" class="validate[required]" name="admin_Q5" id="admin_Q5_no" value="no">
-                                    <label for="admin_Q5_no"><b>否</b></label>
+                                    <input type="radio" class="validate[required]" name="owner_Q5" id="owner_Q5_yes" value="yes">
+                                    <label for="owner_Q5_yes"><b>是</b></label>
+                                    <input type="radio" class="validate[required]" name="owner_Q5" id="owner_Q5_no" value="no">
+                                    <label for="owner_Q5_no"><b>否</b></label>
                                 </div>
                             </td>
                         </tr>
@@ -209,17 +203,147 @@ $(function(){
                                 <div class="first">
                                     <b>上班也在FB的員工 ──</b>
                                     公私分明是我的工作觀念，何況員工上社交網站難免影響工作
-                                    <input type="radio" class="validate[required] has_children" name="admin_Q6" id="admin_Q6_yes" value="yes">
-                                    <label for="admin_Q6_yes"><b>是</b></label>
-                                    <input type="radio" class="validate[required] hide_children" name="admin_Q6" id="admin_Q6_no" value="no">
-                                    <label for="admin_Q6_no"><b>否</b></label>
+                                    <input type="radio" class="validate[required] has_children" name="owner_Q6" id="owner_Q6_yes" value="yes">
+                                    <label for="owner_Q6_yes"><b>是</b></label>
+                                    <input type="radio" class="validate[required] hide_children" name="owner_Q6" id="owner_Q6_no" value="no">
+                                    <label for="owner_Q6_no"><b>否</b></label>
                                 </div>
                                 <div class="second">
                                     請問您是否覺得客戶使用 FB、Line 等社交平台的比例日漸升高？
-                                    <input type="radio" name="admin_Q6_1" id="admin_Q6_1_1" value="yes">
-                                    <label for="admin_Q6_1_1"><b>是</b></label>
-                                    <input type="radio" name="admin_Q6_1" id="admin_Q6_1_2" value="no">
-                                    <label for="admin_Q6_1_2"><b>否</b></label>
+                                    <input type="radio" name="owner_Q6_1" id="owner_Q6_1_1" value="yes">
+                                    <label for="owner_Q6_1_1"><b>是</b></label>
+                                    <input type="radio" name="owner_Q6_1" id="owner_Q6_1_2" value="no">
+                                    <label for="owner_Q6_1_2"><b>否</b></label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="send">
+                        <%= f.submit "" %>
+                    </div>
+                </div>
+
+                <div class="questions manager">
+                    <h4> <b>請問老闆</b>
+                        員工哪些表現讓您覺得很囧、看不慣？
+                    </h4>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th width="7%" align="center" valign="top">1</th>
+                            <td width="93%" valign="top">
+                                <div class="first">
+                                    <b>難管的員工 ──</b>
+                                    公司比較優秀的員工都用自己的電腦工作，資料檔案無法掌控，真可怕
+                                    <input type="radio" class="validate[required] has_children" name="manager_Q1" id="manager_Q1_yes" value="yes">
+                                    <label for="manager_Q1_yes"><b>是</b></label>
+                                    <input type="radio" class="validate[required] hide_children" name="manager_Q1" id="manager_Q1_no" value="no">
+                                    <label for="manager_Q1_no"><b>否</b></label>
+                                </div>
+                                <div class="second">
+                                    請問您公司自帶電腦或平板的員工，人數比例大約是：
+                                    <input type="radio" name="manager_Q1_1" id="manager_Q1_1_1" value="20% 以下">
+                                    <label for="manager_Q1_1_1"><b>20% 以下</b></label>
+                                    <input type="radio" name="manager_Q1_1" id="manager_Q1_1_2" value="20 - 50%">
+                                    <label for="manager_Q1_1_2"><b>20 - 50%</b></label>
+                                    <input type="radio" name="manager_Q1_1" id="manager_Q1_1_3" value="50% 以上">
+                                    <label for="manager_Q1_1_3"><b>50% 以上</b></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="gray">
+                            <th align="center" valign="top">2</th>
+                            <td valign="top">
+                                <div class="first">
+                                    <b>善變的員工 ──</b>
+                                    員工一季換一支手機，說這樣才跟得上時代，不過我總覺得東西好好的還沒壞，就不用換
+                                    <input type="radio" class="validate[required] has_children" name="manager_Q2" id="manager_Q2_yes" value="yes">
+                                    <label for="manager_Q2_yes"><b>是</b></label>
+                                    <input type="radio" class="validate[required] hide_children" name="manager_Q2" id="manager_Q2_no" value="no">
+                                    <label for="manager_Q2_no"><b>否</b></label>
+                                </div>
+                                <div class="second">
+                                    請問您公司是否仍然在使用 Windows XP？
+                                    <input type="radio" name="manager_Q2_1" id="manager_Q2_1_1" value="yes">
+                                    <label for="manager_Q2_1_1"><b>是</b></label>
+                                    <input type="radio" name="manager_Q2_1" id="manager_Q2_1_2" value="no">
+                                    <label for="manager_Q2_1_2"><b>否</b></label>
+           
+                            </td>
+                        </tr>
+                        <tr>
+                            <th align="center" valign="top">3</th>
+                            <td valign="top">
+                                <div class="first">
+                                    <b>不拘小節的員工 ──</b>
+                                    員工常把自己的隨身碟隨手亂放，我不想一直嘮叨這種「小事」，卻又擔心裡面其實裝的是公司檔案，
+                                    <br />
+                                    一旦外流…
+                                    <input type="radio" class="validate[required] has_children" name="manager_Q3" id="manager_Q3_yes" value="yes">
+                                    <label for="manager_Q3_yes"><b>是</b></label>
+                                    <input type="radio" class="validate[required] hide_children" name="manager_Q3" id="manager_Q3_no" value="no">
+                                    <label for="manager_Q3_no"><b>否</b></label>
+                                </div>
+                                <div class="second">
+                                    請您估計一下，公司檔案大約放在幾支隨身碟、外接硬碟裡？
+                                    <input type="radio" name="manager_Q3_1" id="manager_Q3_1_1" value="5 支以下">
+                                    <label for="manager_Q3_1_1"><b>5 支以下</b></label>
+                                    <input type="radio" name="manager_Q3_1" id="manager_Q3_1_2" value="5~20 支">
+                                    <label for="manager_Q3_1_2"><b>5~20 支</b></label>
+                                    <input type="radio" name="manager_Q3_1" id="manager_Q3_1_3" value="20 支以上">
+                                    <label for="manager_Q3_1_3"><b>20 支以上</b></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="gray">
+                            <th align="center" valign="top">4</th>
+                            <td valign="top">
+                                <div class="first">
+                                    <b>花俏的員工 ──</b>
+                                    現在的員工老是想要「時尚」「個人風格」的辦公設備，都不考慮對工作是否實用
+                                    <input type="radio" class="validate[required] has_children" name="manager_Q4" id="manager_Q4_yes" value="yes">
+                                    <label for="manager_Q4_yes"><b>是</b></label>
+                                    <input type="radio" class="validate[required] hide_children" name="manager_Q4" id="manager_Q4_no" value="no">
+                                    <label for="manager_Q4_no"><b>否</b></label>
+                                </div>
+                                <div class="second">
+                                    請問員工是否有將自己的平板或智慧型手機應用於工作？
+                                    <input type="radio" name="manager_Q4_1" id="manager_Q4_1_1" value="yes">
+                                    <label for="manager_Q4_1_1"><b>是</b></label>
+                                    <input type="radio" name="manager_Q4_1" id="manager_Q4_1_2" value="no">
+                                    <label for="manager_Q4_1_2"><b>否</b></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th align="center" valign="top">5</th>
+                            <td valign="top">
+                                <div>
+                                    <b>質疑我的商業直覺的員工 ──</b>
+                                    員工很「勇於表達」，難道為了讓他們心服口服，我還要花時間找證據嗎？
+                                    <input type="radio" class="validate[required]" name="manager_Q5" id="manager_Q5_yes" value="yes">
+                                    <label for="manager_Q5_yes"><b>是</b></label>
+                                    <input type="radio" class="validate[required]" name="manager_Q5" id="manager_Q5_no" value="no">
+                                    <label for="manager_Q5_no"><b>否</b></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="gray">
+                            <th align="center" valign="top">6</th>
+                            <td valign="top">
+                                <div class="first">
+                                    <b>上班也在FB的員工 ──</b>
+                                    公私分明是我的工作觀念，何況員工上社交網站難免影響工作
+                                    <input type="radio" class="validate[required] has_children" name="manager_Q6" id="manager_Q6_yes" value="yes">
+                                    <label for="manager_Q6_yes"><b>是</b></label>
+                                    <input type="radio" class="validate[required] hide_children" name="manager_Q6" id="manager_Q6_no" value="no">
+                                    <label for="manager_Q6_no"><b>否</b></label>
+                                </div>
+                                <div class="second">
+                                    請問您是否覺得客戶使用 FB、Line 等社交平台的比例日漸升高？
+                                    <input type="radio" name="manager_Q6_1" id="manager_Q6_1_1" value="yes">
+                                    <label for="manager_Q6_1_1"><b>是</b></label>
+                                    <input type="radio" name="manager_Q6_1" id="manager_Q6_1_2" value="no">
+                                    <label for="manager_Q6_1_2"><b>否</b></label>
                                 </div>
                             </td>
                         </tr>
@@ -369,14 +493,9 @@ $(function(){
         </div>
         <!--article-->
         <% end %>
-        
-        </div>
+    </div>  
 </body>
-</html>
-
 <script type="text/javascript">
-$("body").attr("data-height", $("body").height()+"px");
-
 var form = $("form#new_record");
 form.validationEngine();
 
@@ -396,7 +515,7 @@ $("input.has_children, input.hide_children").change(function(){
 });
 
 form.submit(function(){
-	var answerObj = new Object();
+    var answerObj = new Object();
     var answers = $(".questions:visible input[type='radio']:checked");
 
     answers.each(function(){
@@ -404,15 +523,14 @@ form.submit(function(){
     });
 
     answerObj.yes_count = answers.filter( "[value='yes']" ).length;
-
-    // console.log(answerObj);
-    // console.log(form.validationEngine('validate'));
-	
-	var input_record_answer = $("<input>").attr("type", "hidden").attr("name", "record[answer]").val( JSON.stringify(answerObj) );
-
-	form.append(input_record_answer);
     
-    // return true;
+    var input_record_answer = $("<input>").attr("type", "hidden").attr("name", "record[answer]").val( JSON.stringify(answerObj) );
+
+    form.append(input_record_answer);
+    
+    // return false;
     return $(this).validationEngine('validate');
 });
 </script>
+</html>
+

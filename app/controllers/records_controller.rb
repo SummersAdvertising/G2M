@@ -40,10 +40,9 @@ class RecordsController < ApplicationController
   def edit
     @record = Record.find(params[:id])
     @record_answers = JSON.parse(@record.answer)
-    @user_type = (@record.user_type == "worker") ? "worker" : "admin"
 
-    case @user_type
-    when "admin"
+    case @record.user_type
+    when "owner", "manager"
       @resolutions = {"Q1_title" => "難管的員工 ──", "Q1_sub" => "公司比較優秀的員工都用自己的電腦工作，資料檔案無法掌控，真可怕", "Q1_detail" => "親愛的老闆，員工自己帶電腦原因不外乎：平板、觸控、雲端整合，這些也是Windows 8.1 的優點，如果將公司電腦升級，相信可以滿足員工需求，也能取回資料掌控權。", 
                       "Q1_1_sub" => "請問您公司自帶電腦或平板的員工，人數比例大約是：",
                       "Q2_title" => "善變的員工──", "Q2_sub" => "員工一季換一支手機，說這樣才跟得上時代，不過我總覺得東西好好的還沒壞，就不用換", "Q2_detail" => "親愛的老闆，東西有沒有壞並不是好的汰換標準，能不能趕上現代的工作效率更是重要，比方說 Windows XP 終止支援就代表那台電腦效能降低、不堪用了（了解風險請<a href='#'>看這裡</a>）。", 
@@ -152,7 +151,7 @@ class RecordsController < ApplicationController
         format.json { render json: @record, status: :created, location: @record }
       else
         flash[:alert] = "#{ @record.errors.full_messages.join("\\n").html_safe }"
-        format.html { render action: "new" }
+        format.html { redirect_to :back }
         format.json { render json: @record.errors, status: :unprocessable_entity }
       end
     end
@@ -174,7 +173,8 @@ class RecordsController < ApplicationController
         format.html { redirect_to root_path, notice: '參加成功。' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        flash[:alert] = "#{ @record.errors.full_messages.join("\\n").html_safe }"
+        format.html { redirect_to :back }
         format.json { render json: @record.errors, status: :unprocessable_entity }
       end
     end
