@@ -57,7 +57,7 @@ $(function(){
   </script>
 </head>
 
-<body>
+<body data-height="">
     <div id="wrapper">
         <div id="article" _height="auto">
             <%= form_for(@record) do |f| %>
@@ -496,6 +496,8 @@ $(function(){
     </div>  
 </body>
 <script type="text/javascript">
+$("body").attr("data-height", $("body").height()+"px");
+
 var form = $("form#new_record");
 form.validationEngine();
 

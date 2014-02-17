@@ -333,6 +333,8 @@ window.fbAsyncInit = function() {
 </script>
 
 	<script type="text/javascript">
+	$("body").attr("data-height", $("body").height()+"px");
+
 	var div_answer =  $("div#answer").children("div");
 	div_answer.filter(":even").addClass("white");
 	div_answer.filter(":odd").addClass("gray");
