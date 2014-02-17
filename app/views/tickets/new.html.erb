@@ -17,6 +17,14 @@
 $(function(){
   MSform("test@example.com", "Set mail title here.");
 });
+
+<% if flash[ :notice ] %>
+
+	alert('<%= flash[:notice] %>');
+
+<% flash.delete( :notice ) %>
+<% end %>
+
 </script>
 </head>
 
@@ -24,14 +32,14 @@ $(function(){
 	<%= form_for @ticket do | f | %>
   <div id="article" _height="auto">
     <div id="form">
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <th width="36%" valign="top"> <b>我有興趣的優惠方案是（可複選）</b></th>
-          <td width="64%" valign="top" class="verify"><p class="right"><img src="/images/right.png"/></p>
-            <p class="wrong"><img src="/images/wrong.png"/> 請勾選優惠方案</p></td>
+          <td width="64%" valign="top"></td>
         </tr>
         <tr>
-          <td colspan="2"  class="checkbox"><div class="boxgroup MSform" data-mailnote="我有興趣的優惠方案是：">
+          <td colspan="2"  class="checkbox"><div class="">
               <input name="ticket[interesting_product][]" type="checkbox" value="Windows 8.1"/>
               <span>Windows 8.1</span><br>
               <input name="ticket[interesting_product][]" type="checkbox" value="Office 2013"/>
@@ -44,11 +52,10 @@ $(function(){
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <th width="36%" valign="top"> <b>我有興趣的電腦廠牌是（可複選）</b></th>
-          <td width="64%" valign="top" class="verify"><p class="right"><img src="/images/right.png"/></p>
-            <p class="wrong"><img src="/images/wrong.png"/> 請勾選電腦廠牌</p></td>
+          <td width="64%" valign="top"><p class="right"></td>
         </tr>
         <tr>
-          <td colspan="2"  class="checkbox"><div class="boxgroup MSform" data-mailnote="我有興趣的電腦廠牌是：">
+          <td colspan="2"  class="checkbox"><div class="">
               <input name="ticket[interesting_brand][]" type="checkbox" value="HP"/>
               <span>HP</span><br>
               <input name="ticket[interesting_brand][]" type="checkbox" value="Asus"/>
@@ -70,6 +77,7 @@ $(function(){
             </div></td>
         </tr>
       </table>
+      
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <th width="15%" valign="top"><b>真實姓名：</b></th>

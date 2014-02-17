@@ -17,7 +17,7 @@ class TicketsController < ApplicationController
         
     respond_to do |format|
       if @ticket.save
-        format.html { redirect_to new_ticket_path, notice: '我們收到您的資料囉，感謝您的填寫！' }
+        format.html { redirect_to new_ticket_path, notice: '感謝您參與本次活動，我們將於 10 個工作日回覆您！' }
         format.json { render json: @ticket, status: :created, location: @ticket }
       else
         format.html { render action: "new" }
