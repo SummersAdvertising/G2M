@@ -368,7 +368,7 @@ $("a#link_fb").click(function(e){
 
 	if( $("form#edit_record_<%= @record.id %>").validationEngine('validate') ){
 		FB.login(function(){
-			FB.api('/me/feed', 'post', {message: '老闆囧很大－職場微心結大調查，參加就抽大電視'},function (response) {
+			FB.api('/me/feed', 'post', {message: '老闆囧很大－職場微心結大調查，參加就抽無線劇院！', description: '老闆、員工悶氣別再憋了！快來填秘密問卷一吐為快，不但立即獲得實用解方，化解職場微心結，還可抽最大獎無線劇院，更有優惠方案幫您輕鬆升級最新科技，就算 Windows XP / Office 2003 將於 2014/4/8 終止支援也不囧。', picture: "/images/thumbv3.jpg"},function (response) {
 				if (response && response.id) {
 					//share to FB successfully, update record
 					$("input#record_fbshare_id").val(response.id);
