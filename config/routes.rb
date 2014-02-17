@@ -1,7 +1,16 @@
 G2M::Application.routes.draw do
   resources :tickets
 
-  resources :records, :except => [:index, :show, :destroy]
+  resources :records, :except => [:index, :show, :destroy] do
+  	collection do
+  		get :new_for_iframe
+  	end
+
+  	member do
+  		get :edit_for_iframe
+  	end
+  end
+
   root :to => "records#new"
 
   mount_sextant if Rails.env.development?

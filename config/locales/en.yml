@@ -2,4 +2,24 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      record:
+        answer: "問卷答案"
+      signup:
+        company: "公司名稱"
+        having_pc: "請問公司（台灣辦公室）擁有的 PC 台數（含桌機和筆電）"
+        name: "真實姓名"
+        office_versions: "請問目前貴公司的文書作業系統版本為？"
+        pc_os: "請問目前貴公司的 PC / NB 的作業系統版本為？"
+        tel: "聯絡電話"
+        title: "職稱"
+        update_need: "請問貴公司在未來 6 個月內，是否有計劃升級作業系統？ "
+        industry: "產業類別"
+        having_mobile_device: "您個人擁有的行動裝置"
+        bring_pc_to_work: "您是否會帶自己的電腦／平板在公司工作？"
+        company_mobile_device: "公司配備給您的行動裝置"
+
+    errors:
+      messages:
+        blank: "不能空白"

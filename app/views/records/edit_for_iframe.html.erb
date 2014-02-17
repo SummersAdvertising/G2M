@@ -20,6 +20,11 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/result.css">
+
+    <style type="text/css">
+    html, body { background: none; }
+    </style>
+    
     <script src="/js/auto-full-height.min.js"></script>
     <script>
 $(function(){ 
@@ -56,30 +61,14 @@ $(function(){
   </script>
 </head>
 
-<body>
+<body data-height="">
 	<div id="wrapper">
-		<div id="header" _height="none">
-			<div id="nav">
-				<a href="#">調查與抽獎</a>
-				<a href="#">軟體優惠</a>
-				<a href="#">硬體優惠</a>
-				<a href="#">XP / 2003 風險</a>
-				<a href="#">活動辦法</a>
-				<a href="default.htm" title="回首頁">
-					<img src="/images/home.png"/>
-				</a>
-			</div>
-			<h1>老闆囧很大</h1>
-			<div class="text">
-				<img src="/images/r-01.png"/>
-			</div>
-		</div>
 		<!--header-->
 		<div id="article" _height="auto">
 			<% if (@record_answers && @record_answers["yes_count"] && (@record_answers["yes_count"] > 0) ) %>
 			<div id="answer">
 				<% for i in 1..6 do %>
-				<% if @record_answers["#{@record.user_type}_Q#{i}"] == "yes" %>
+				<% if @record_answers["#{@user_type}_Q#{i}"] == "yes" %>
 				<div>
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
 						<tr>
@@ -87,22 +76,22 @@ $(function(){
 							<td width="91%" valign="top">
 								<div> <b><%= @resolutions["Q#{i}_title"] %></b>
 									<%= @resolutions["Q#{i}_sub"] %>
-									<img src="/images/r-03.png"/> <b><%= @record_answers["#{@record.user_type}_Q#{i}"] == "yes" ? "是" : @record_answers["#{@record.user_type}_Q#{i}"] %></b>
+									<img src="/images/r-03.png"/> <b><%= @record_answers["#{@user_type}_Q#{i}"] == "yes" ? "是" : @record_answers["#{@user_type}_Q#{i}"] %></b>
 								</div>
 
 								<!-- 顯示子小題題目與回答 -->
 
-								<% if (["owner", "manager"].include?(@record.user_type) && [1, 2, 3, 4, 6].include?(i)) || (@record.user_type == "worker" && [1, 3, 4, 5].include?(i)) %>
+								<% if (@user_type == "admin" && [1, 2, 3, 4, 6].include?(i)) || (@user_type == "worker" && [1, 3, 4, 5].include?(i)) %>
 								<div>
 									<%= @resolutions["Q#{i}_1_sub"] %>
-									<img src="/images/r-03.png"/><b><%= @record_answers["#{@record.user_type}_Q#{i}_1"] == "yes" ? "是" : @record_answers["#{@record.user_type}_Q#{i}_1"] %></b>
+									<img src="/images/r-03.png"/><b><%= @record_answers["#{@user_type}_Q#{i}_1"] == "yes" ? "是" : @record_answers["#{@user_type}_Q#{i}_1"] %></b>
 								</div>
 								<% end %>
 
-								<% if (@record.user_type == "worker" && [1, 3].include?(i)) %>
+								<% if (@user_type == "worker" && [1, 3].include?(i)) %>
 								<div>
 									<%= @resolutions["Q#{i}_2_sub"] %>
-									<img src="images/r-03.png"/><b><%= @record_answers["#{@record.user_type}_Q#{i}_2"] == "yes" ? "是" : @record_answers["#{@record.user_type}_Q#{i}_2"] %></b>
+									<img src="images/r-03.png"/><b><%= @record_answers["#{@user_type}_Q#{i}_2"] == "yes" ? "是" : @record_answers["#{@user_type}_Q#{i}_2"] %></b>
 								</div>
 								<% end %>
 							</td>
@@ -127,7 +116,7 @@ $(function(){
 				<ul>
 					<% for i in 1..6 do %>
 					<li>
-					<% if @record_answers["#{@record.user_type}_Q#{i}"] == "yes" %>
+					<% if @record_answers["#{@user_type}_Q#{i}"] == "yes" %>
 					<%= @understandings["Q#{i}"].html_safe %>
 					<% end #if %>
 					</li>
@@ -323,18 +312,6 @@ $(function(){
 			<% end %>
 		</div>
 		<!--article-->
-		<div id="footer" _height="none">
-			<div id="line"></div>
-			<img src="/images/s-06.png"/>
-			©  2014 Microsoft Corporation. 著作權所有，並保留一切權利。
-			<a href="http://www.microsoft.com/taiwan/misc/cpyright.htm" target="_blank">使用規定</a>
-			｜
-			<a href="http://www.microsoft.com/library/toolbar/3.0/trademarks/zh-tw.mspx" target="_blank">商標</a>
-			｜
-			<a href="http://www.microsoft.com/privacystatement/zh-tw/core/default.aspx" target="_blank">隱私權聲明</a>
-		</div>
-	</div>
-	<!--footer-->	
 
 	<!-- for fb like button, include the JavaScript SDK -->	
 	<div id="fb-root"></div>
@@ -356,9 +333,13 @@ window.fbAsyncInit = function() {
 </script>
 
 	<script type="text/javascript">
+	$("body").attr("data-height", $("body").height()+"px");
+
 	var div_answer =  $("div#answer").children("div");
 	div_answer.filter(":even").addClass("white");
 	div_answer.filter(":odd").addClass("gray");
+
+	$("body").attr("data-height", $("body").height()+"px");
 
 
 
@@ -390,34 +371,5 @@ $("a#link_fb").click(function(e){
 	
 </script>
 
-	<!-- START OF SmartSource Data Collector TAG -->	
-	<!-- Copyright (c) 1996-2009 WebTrends Inc.  All rights reserved. -->
-	<!-- Version: MS.3.0.0 -->
-	<script src="http://js.microsoft.com/library/mnp/2/wt/js/wt.js" type="text/javascript"></script>
-
-	<!-- ----------------------------------------------------------------------------------- -->
-	<!-- Warning: The two script blocks below must remain inline. Moving them to an external -->
-	<!-- JavaScript include file can cause serious problems with cross-domain tracking.      -->
-	<!-- ----------------------------------------------------------------------------------- -->
-	<script type="text/javascript">
-//<![CDATA[
-var _tag=new WebTrends();
-_tag.dcsid="dcsjwb9vb00000c932fd0rjc7_5p3t";
-// _tag.fpcdom=".domain.com";
-_tag.dcsGetId();
-_tag.trackevents=true;
-//]]>></script>
-	<script type="text/javascript">
-//<![CDATA[
-// Add custom parameters here.
-//_tag.DCSext.param_name=param_value;
-_tag.dcsCollect();
-//]]>></script>
-	<noscript>
-		<div>
-			<img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=MS.3.0.0"/>
-		</div>
-	</noscript>
-	<!-- END OF SmartSource Data Collector TAG -->
 </body>
 </html>
