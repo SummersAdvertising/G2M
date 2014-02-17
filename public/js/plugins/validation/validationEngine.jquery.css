@@ -14,6 +14,8 @@
 
 
 
+
+
 .inputContainer {
 	position: relative;
 	float: left;
@@ -59,6 +61,17 @@
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	-o-border-radius: 6px;
+}
+
+.formError .formErrorContent{
+        border:none!important;
+        box-shadow:none!important;
+        -webkit-box-shadow:none!important;
+        -o-box-shadow:none!important;
+        top:-15px!important;
+        text-align:center!important;
+        padding:4px 10px 0 10px!important;
+        background:#EB6100!important
 }
 
 .formError.inline .formErrorContent {
@@ -181,3 +194,5 @@ body.rtl .formError .formErrorArrow {
 	border: none;
 	background: #ddd;
 }
+
+
