@@ -147,8 +147,13 @@ class RecordsController < ApplicationController
       if @record.save
         session[:record_id] = @record.id
 
-        format.html { redirect_to edit_record_path(@record) }
-        format.json { render json: @record, status: :created, location: @record }
+        if params[:from] == "iframe"
+          format.html { redirect_to edit_for_iframe_record_path(@record) }
+          format.json { render json: @record, status: :created, location: @record }
+        else
+          format.html { redirect_to edit_record_path(@record) }
+          format.json { render json: @record, status: :created, location: @record }
+        end
       else
         flash[:alert] = "#{ @record.errors.full_messages.join("\\n").html_safe }"
         format.html { redirect_to :back }
@@ -170,8 +175,14 @@ class RecordsController < ApplicationController
       if ( @record.user_fbid || @record.update_attributes(params[:record]) )
         @signup.update_attributes(params[:signup])
 
-        format.html { redirect_to root_path, notice: '參加成功。' }
-        format.json { head :no_content }
+        if params[:from] == "iframe"
+          format.html { redirect_to new_for_iframe_records_path, notice: '參加成功。' }
+          format.json { head :no_content }
+        else
+          format.html { redirect_to root_path, notice: '參加成功。' }
+          format.json { head :no_content }
+        end
+
       else
         flash[:alert] = "#{ @record.errors.full_messages.join("\\n").html_safe }"
         format.html { redirect_to :back }

@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="/css/result.css">
     
     <script src="/js/auto-full-height.min.js"></script>
+    <script src="/js/iframeheight.js"></script>
     <script>
 $(function(){ 
   var _showTab = 0;
@@ -62,6 +63,7 @@ $(function(){
 </script>
 <script type="text/javascript">
   $(document).ready(function(){
+  	$.iframeHeightExternal();
   	$("form#edit_record_<%= @record.id %>").validationEngine();
 
     if("<%= alert || notice %>"){
@@ -73,6 +75,10 @@ $(function(){
 
 <body data-height="">
 	<div id="wrapper">
+		<div id="header" _height="none">
+            <h1>老闆囧很大</h1>
+            <div class="text"><img src="/images/d-01.png"/></div>
+        </div>
 		<!--header-->
 		<div id="article" _height="auto">
 			<% if (@record_answers && @record_answers["yes_count"] && (@record_answers["yes_count"] > 0) ) %>
@@ -138,9 +144,8 @@ $(function(){
 			<div id="perfect">
 				<h3>恭喜您職場 0 心結</h3>
 				<ul>
-					<li>
-						輕鬆升級 Windows 8.1 / Office 2013 / Office 365 更能為自己大加分，遠離 Windows XP / Office 2003 終止支援的風險，效率加速工作更順暢。
-					</li>
+					<li>輕鬆升級 Windows 8.1 / Office 2013 / Office 365 更能為自己大加分，遠離 Windows XP / Office 2003 終止支援的風險，效率加速工作更順暢。<br />
+<a href="http://www.microsoft.com/zh-tw/windows/business/NewWindows/WhatsNew.aspx" target="_blank">Windows 8.1 介紹 &gt;&gt;</a> 　　　<a href="http://office.microsoft.com/zh-tw/support/FX102823666.aspx" target="_blank">Office 2013 介紹 &gt;&gt;</a> 　　　<a href="http://www.microsoft.com/taiwan/office365/smb/default.aspx" target="_blank">Office 365 介紹 &gt;&gt;</a></li>
 				</ul>
 			</div>
 			<% end %>
@@ -368,7 +373,11 @@ $("a#link_fb").click(function(e){
 							$("input#record_user_fbid").val(response.id);
 						}
 
-		 				$("form#edit_record_<%= @record.id %>").submit();
+						var form = $("form#edit_record_<%= @record.id %>");
+						var input_record_type = $("<input>").attr("type", "hidden").attr("name", "from").val("iframe");
+
+						form.append(input_record_answer).append(input_record_type);
+						form.submit();
 					});				
 				}
 				else{

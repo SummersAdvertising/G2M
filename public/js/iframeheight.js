@@ -19,7 +19,7 @@ Details: http://github.com/Sly777/Iframe-Height-Jquery-Plugin
         exceptPages          : "",              // Pages that doesnt need auto height
         debugMode            : false,           // Debug mode
         visibilitybeforeload : false,           // If you change this to true, iframe will be invisible when every iframe load
-        blockCrossDomain     : true,           // Set true if you dont want use cross domain fix
+        blockCrossDomain     : false,           // Set true if you dont want use cross domain fix
         externalHeightName   : "bodyHeight",    // Height data name that comes from postMessage (CDI) and gives height value
         onMessageFunctionName: "getHeight",     // Function name that plugin calls this to get data from external source
         domainName           : "*",             // Set this if you want to get data from specific domain

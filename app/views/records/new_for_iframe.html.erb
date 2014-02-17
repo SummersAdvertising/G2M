@@ -36,35 +36,13 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/detect.css">
-    <!-- <script src="/js/auto-full-height.min.js"></script> -->
+    <script src="/js/auto-full-height.min.js"></script>
     <script src="/js/iframeheight.js"></script>
 
     <style type="text/css">
     .questions { display: none; }
     </style>
 
-    <script>
-$(function(){ 
-  var _showTab = 0;
-  var $defaultLi = $('#tab ul li').eq(_showTab);
-  
-  $('#tab ul li').click(function(e) {
-    e.preventDefault();
-
-    var $this = $(this),
-      _clickTab = $this.find('a');
-    $this.addClass('active').siblings('.active').removeClass('active');   
-    $(_clickTab.attr('href')).stop(false, true).fadeIn(1000).siblings().hide();
-
-    $("#record_user_type").val( _clickTab.data("value") );
-
-    return false;
-  }).find('a').focus(function(){
-    this.blur();
-  });
-});
-
-</script>
 <script type="text/javascript">
   $(document).ready(function(){
 
@@ -548,8 +526,9 @@ form.submit(function(){
     answerObj.yes_count = answers.filter( "[value='yes']" ).length;
     
     var input_record_answer = $("<input>").attr("type", "hidden").attr("name", "record[answer]").val( JSON.stringify(answerObj) );
+    var input_record_type = $("<input>").attr("type", "hidden").attr("name", "from").val("iframe");
 
-    form.append(input_record_answer);
+    form.append(input_record_answer).append(input_record_type);
     
     // return false;
     return $(this).validationEngine('validate');
@@ -557,7 +536,28 @@ form.submit(function(){
 </script>
 <script type="text/javascript">
   $(document).ready(function(){
-    $.iframeHeightExternal();
+    var iframeExt = $.iframeHeightExternal();
+
+    var _showTab = 0;
+    var $defaultLi = $('#tab ul li').eq(_showTab);
+
+    $('#tab ul li').click(function(e) {
+        e.preventDefault();
+        iframeExt.update();
+
+        var $this = $(this),
+        _clickTab = $this.find('a');
+
+        $this.addClass('active').siblings('.active').removeClass('active');   
+        $(_clickTab.attr('href')).stop(false, true).fadeIn(1000).siblings().hide();
+
+        $("#record_user_type").val( _clickTab.data("value") );
+
+        return false;
+    }).find('a').focus(function(){
+        this.blur();
+    });
+
   });
   </script>
 </html>
