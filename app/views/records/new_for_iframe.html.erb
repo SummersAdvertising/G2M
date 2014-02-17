@@ -68,7 +68,7 @@
             <div id="intro">
                 <h3>
                     答題、分享、再抽獎
-                    <a href="#">詳細活動辦法&gt;&gt;</a>
+                    <!-- <a href="#">詳細活動辦法&gt;&gt;</a> -->
                 </h3>
                 <p>
                     1. 請作答以下題目，完成後按「看結果」
@@ -530,16 +530,16 @@ $("input.has_children, input.hide_children").change(function(){
     if( $this.is(":checked") ){
         switch($this.is(".has_children")) {
             case true:
-            $this.parent().next('.second').stop().show(500).children("input").addClass("validate[required]");
+            $this.parent().next('.second').stop().show(500, function(){iframeExt.update();}).children("input").addClass("validate[required]");
             break;
 
             case false:
-            $this.parent().next('.second').stop().hide(500).children("input").removeClass("validate[required]").prop("checked", false);
+            $this.parent().next('.second').stop().hide(500, function(){iframeExt.update();}).children("input").removeClass("validate[required]").prop("checked", false);
             break;
         }
     }
 
-    iframeExt.update();
+    
 });
 
 form.submit(function(){
