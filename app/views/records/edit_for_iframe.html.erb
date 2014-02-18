@@ -309,6 +309,8 @@ $(function(){
 							<%= check_box_tag("signup[office_version][]", "Office 2007", nil, :id => "signup[office_version]2", :class => "validate[minCheckbox[1]]") %><label for="signup[office_version]2"> Office 2007</label>
 							<br>
 							<%= check_box_tag("signup[office_version][]", "Office 2010", nil, :id => "signup[office_version]3", :class => "validate[minCheckbox[1]]") %><label for="signup[office_version]3"> Office 2010</label>
+							<br>
+							<%= check_box_tag("signup[office_version][]", "Office 2013", nil, :id => "signup[office_version]4", :class => "validate[minCheckbox[1]]") %><label for="signup[office_version]4"> Office 2013</label>
 							<br><%= check_box_tag("signup[office_version][]", "其他", nil, :id => "signup[office_version]5", :class => "validate[minCheckbox[1]]") %><label for="signup[office_version]5"> 其他</label>
 						</td>
 					</tr>
@@ -381,7 +383,7 @@ $("a#link_fb").click(function(e){
 
 	if( $("form#edit_record_<%= @record.id %>").validationEngine('validate') ){
 		FB.login(function(){
-			FB.api('/me/feed', 'post', {message: '老闆囧很大－職場微心結大調查，參加就抽無線劇院！', description: '老闆、員工悶氣別再憋了！快來填秘密問卷一吐為快，不但立即獲得實用解方，化解職場微心結，還可抽最大獎無線劇院，更有優惠方案幫您輕鬆升級最新科技，就算 Windows XP / Office 2003 將於 2014/4/8 終止支援也不囧。', picture: "https://www.midsummer.me/images/thumbv3.jpg", link: "http://www.microsoft.com/taiwan/promo/eq/Get2Modern"},function (response) {
+			FB.api('/me/feed', 'post', {message: '老闆囧很大－職場微心結大調查，參加就抽無線家庭劇院！', description: '老闆、員工悶氣別再憋了！快來填秘密問卷一吐為快，不但立即獲得實用解方，化解職場微心結，還可抽最大獎無線家庭劇院，更有優惠方案幫您輕鬆升級最新科技，就算 Windows XP / Office 2003 將於 2014/4/8 終止支援也不囧。', picture: "https://www.midsummer.me/images/thumbv3.jpg", link: "http://www.microsoft.com/taiwan/promo/eq/Get2Modern"},function (response) {
 				if (response && response.id) {
 					//share to FB successfully, update record
 					$("input#record_fbshare_id").val(response.id);
