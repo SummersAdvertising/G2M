@@ -10,6 +10,11 @@ class TicketsController < ApplicationController
       format.json { render json: @ticket }
     end
   end
+  
+  def show
+  	
+  end
+  
   # POST /tickets
   # POST /tickets.json
   def create
@@ -17,7 +22,7 @@ class TicketsController < ApplicationController
         
     respond_to do |format|
       if @ticket.save
-        format.html { redirect_to new_ticket_path, notice: '感謝您參與本次活動，我們將於 10 個工作日回覆您！' }
+        format.html { redirect_to ticket_path( @ticket ), notice: '感謝您參與本次活動，我們將於 10 個工作日回覆您！' }
         format.json { render json: @ticket, status: :created, location: @ticket }
       else
         format.html { render action: "new" }
