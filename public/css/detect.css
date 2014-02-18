@@ -20,8 +20,8 @@ position:absolute;top:85px;left:112px}
 #tab{overflow:hidden;margin:50px 0}
 #tab li{float:left;margin:0 15px}
 #tab li a{width:265px;height:66px;display:block;font:900 24px 微軟正黑體,Microsoft JhengHei;text-align:center;
-
 background:url(/images/d-02.jpg) 0 0 no-repeat;color:#505050;padding:18px 0 0 0}
+#tab li a{ text-decoration:none }
 #tab .active a{background:url(/images/d-02h.jpg) 0 0 no-repeat}
 
 #detect .gray{background:#F5F5F5}

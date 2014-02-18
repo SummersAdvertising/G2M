@@ -27,8 +27,9 @@ Details: http://github.com/Sly777/Iframe-Height-Jquery-Plugin
         watcherTime          : 400              // Watcher control Milliseconds
     };
 
-    $.iframeHeight = function(el, options){
+    $.iframeHeight = function(el, options, callback){
         var base = this;
+        base.callback = callback;
         $.iframeHeight.resizeTimeout = null;
         $.iframeHeight.resizeCount = 0;
 
@@ -220,6 +221,8 @@ Details: http://github.com/Sly777/Iframe-Height-Jquery-Plugin
             if(base.options.visibilitybeforeload && !(base.debug.GetBrowserInfo.msie && base.debug.GetBrowserInfo.version == "7.0")) base.$el.css("visibility", "visible");
             base.debug.Log("Now iframe height is " + _height + "px");
             base.$el.data("iframeheight", _height);
+
+            base.callback();
         };
 
         $.iframeHeight.resizeIframe = function(){
@@ -294,9 +297,9 @@ Details: http://github.com/Sly777/Iframe-Height-Jquery-Plugin
     
     $.iframeHeight.defaultOptions = iframeOptions;
     
-    $.fn.iframeHeight = function(options){
+    $.fn.iframeHeight = function(options, callback){
         return this.each(function(){
-            (new $.iframeHeight(this, options));
+            (new $.iframeHeight(this, options, callback));
         });
     };
 
