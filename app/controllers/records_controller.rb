@@ -189,10 +189,10 @@ class RecordsController < ApplicationController
         @signup.update_attributes(params[:signup])
 
         if params[:from] == "iframe"
-          format.html { redirect_to new_for_iframe_records_path, notice: '參加成功。' }
+          format.html { redirect_to "http://www.microsoft.com/taiwan/promo/eq/Get2Modern/" }
           format.json { head :no_content }
         else
-          format.html { redirect_to root_path, notice: '參加成功。' }
+          format.html { redirect_to "http://www.microsoft.com/taiwan/promo/eq/Get2Modern/" }
           format.json { head :no_content }
         end
 
