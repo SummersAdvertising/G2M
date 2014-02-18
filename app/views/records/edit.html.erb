@@ -240,35 +240,35 @@ $(function(){
 						<td colspan="2">
 							<b>您個人擁有的行動裝置</b>
 							<br>
-							<%= check_box_tag("signup[having_mobile_device][]", "平板", nil, :id => "signup[having_mobile_device]1", :class => "validate[minCheckbox[1]]") %><label for="signup[having_mobile_device]1"> 平板</label>
+							<%= check_box_tag("signup[having_mobile_device][]", "tablet", nil, :id => "signup[having_mobile_device]1", :class => "validate[minCheckbox[1]]") %><label for="signup[having_mobile_device]1"> 平板</label>
 							<br>
-							<%= check_box_tag("signup[having_mobile_device][]", "變形平板", nil, :id => "signup[having_mobile_device]2", :class => "validate[minCheckbox[1]]") %><label for="signup[having_mobile_device]2"> 變形平板</label>
+							<%= check_box_tag("signup[having_mobile_device][]", "transformer_tablet", nil, :id => "signup[having_mobile_device]2", :class => "validate[minCheckbox[1]]") %><label for="signup[having_mobile_device]2"> 變形平板</label>
 							<br>
-							<%= check_box_tag("signup[having_mobile_device][]", "智慧型手機", nil, :id => "signup[having_mobile_device]3", :class => "validate[minCheckbox[1]]") %><label for="signup[having_mobile_device]3"> 智慧型手機</label>
+							<%= check_box_tag("signup[having_mobile_device][]", "smart_phone", nil, :id => "signup[having_mobile_device]3", :class => "validate[minCheckbox[1]]") %><label for="signup[having_mobile_device]3"> 智慧型手機</label>
 							<br>
-							<%= check_box_tag("signup[having_mobile_device][]", "無", nil, :id => "signup[having_mobile_device]4", :class => "validate[minCheckbox[1]]") %><label for="signup[having_mobile_device]4"> 無</label>
+							<%= check_box_tag("signup[having_mobile_device][]", "none", nil, :id => "signup[having_mobile_device]4", :class => "validate[minCheckbox[1]]") %><label for="signup[having_mobile_device]4"> 無</label>
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2">
 							<b>您是否會帶自己的電腦／平板在公司工作？</b>
 							<br>
-							<%= radio_button_tag("signup[bring_pc_to_work]", "是", nil, :id => "signup[bring_pc_to_work]1", :class => "validate[required]") %><label for="signup[bring_pc_to_work]1"> 是</label>
+							<%= radio_button_tag("signup[bring_pc_to_work]", "yes", nil, :id => "signup[bring_pc_to_work]1", :class => "validate[required]") %><label for="signup[bring_pc_to_work]1"> 是</label>
 							<br>
-							<%= radio_button_tag("signup[bring_pc_to_work]", "否", nil, :id => "signup[bring_pc_to_work]2", :class => "validate[required]") %><label for="signup[bring_pc_to_work]2"> 否</label>
+							<%= radio_button_tag("signup[bring_pc_to_work]", "no", nil, :id => "signup[bring_pc_to_work]2", :class => "validate[required]") %><label for="signup[bring_pc_to_work]2"> 否</label>
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2">
 							<b>公司配備給您的行動裝置</b>
 							<br>
-							<%= check_box_tag("signup[company_mobile_device][]", "平板", nil, :id => "signup[company_mobile_device]1", :class => "validate[minCheckbox[1]]") %><label for="signup[company_mobile_device]1"> 平板</label>
+							<%= check_box_tag("signup[company_mobile_device][]", "tablet", nil, :id => "signup[company_mobile_device]1", :class => "validate[minCheckbox[1]]") %><label for="signup[company_mobile_device]1"> 平板</label>
 							<br>
-							<%= check_box_tag("signup[company_mobile_device][]", "變形平板", nil, :id => "signup[company_mobile_device]2", :class => "validate[minCheckbox[1]]") %><label for="signup[company_mobile_device]2"> 變形平板</label>
+							<%= check_box_tag("signup[company_mobile_device][]", "transformer_tablet", nil, :id => "signup[company_mobile_device]2", :class => "validate[minCheckbox[1]]") %><label for="signup[company_mobile_device]2"> 變形平板</label>
 							<br>
-							<%= check_box_tag("signup[company_mobile_device][]", "智慧型手機", nil, :id => "signup[company_mobile_device]3", :class => "validate[minCheckbox[1]]") %><label for="signup[company_mobile_device]3"> 智慧型手機</label>
+							<%= check_box_tag("signup[company_mobile_device][]", "smart_phone", nil, :id => "signup[company_mobile_device]3", :class => "validate[minCheckbox[1]]") %><label for="signup[company_mobile_device]3"> 智慧型手機</label>
 							<br>
-							<%= check_box_tag("signup[company_mobile_device][]", "無", nil, :id => "signup[company_mobile_device]4", :class => "validate[minCheckbox[1]]") %><label for="signup[company_mobile_device]4"> 無</label>
+							<%= check_box_tag("signup[company_mobile_device][]", "none", nil, :id => "signup[company_mobile_device]4", :class => "validate[minCheckbox[1]]") %><label for="signup[company_mobile_device]4"> 無</label>
 						</td>
 					</tr>
 					<tr>
@@ -294,7 +294,7 @@ $(function(){
 							<br>
 							<%= check_box_tag("signup[pc_os][]", "Linux", nil, :id => "signup[pc_os]6", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_os]6"> Linux</label>
 							<br>
-							<%= check_box_tag("signup[pc_os][]", "其他", nil, :id => "signup[pc_os]7", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_os]7"> 其他</label>
+							<%= check_box_tag("signup[pc_os][]", "others", nil, :id => "signup[pc_os]7", :class => "validate[minCheckbox[1]]") %><label for="signup[pc_os]7"> 其他</label>
 						</td>
 					</tr>
 					<tr>
@@ -308,18 +308,18 @@ $(function(){
 							<%= check_box_tag("signup[office_version][]", "Office 2010", nil, :id => "signup[office_version]3", :class => "validate[minCheckbox[1]]") %><label for="signup[office_version]3"> Office 2010</label>
 							<br>
 							<%= check_box_tag("signup[office_version][]", "Office 2013", nil, :id => "signup[office_version]4", :class => "validate[minCheckbox[1]]") %><label for="signup[office_version]4"> Office 2013</label>
-							<br><%= check_box_tag("signup[office_version][]", "其他", nil, :id => "signup[office_version]5", :class => "validate[minCheckbox[1]]") %><label for="signup[office_version]5"> 其他</label>
+							<br><%= check_box_tag("signup[office_version][]", "others", nil, :id => "signup[office_version]5", :class => "validate[minCheckbox[1]]") %><label for="signup[office_version]5"> 其他</label>
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2">
 							<b>請問貴公司在未來 6 個月內，是否有計劃升級作業系統？</b>
 							<br>
-							<%= radio_button_tag("signup[update_need]", "是", nil, :id => "signup[update_need]1", :class => "validate[required]") %><label for="signup[update_need]1"> 是</label>
+							<%= radio_button_tag("signup[update_need]", "yes", nil, :id => "signup[update_need]1", :class => "validate[required]") %><label for="signup[update_need]1"> 是</label>
 							<br>
-							<%= radio_button_tag("signup[update_need]", "否", nil, :id => "signup[update_need]2", :class => "validate[required]") %><label for="signup[update_need]2"> 否</label>
+							<%= radio_button_tag("signup[update_need]", "no", nil, :id => "signup[update_need]2", :class => "validate[required]") %><label for="signup[update_need]2"> 否</label>
 							<br>
-							<%= radio_button_tag("signup[update_need]", "不知道", nil, :id => "signup[update_need]3", :class => "validate[required]") %><label for="signup[update_need]3"> 不知道</label>
+							<%= radio_button_tag("signup[update_need]", "not_sure", nil, :id => "signup[update_need]3", :class => "validate[required]") %><label for="signup[update_need]3"> 不知道</label>
 						</td>
 					</tr>
 					<tr>
