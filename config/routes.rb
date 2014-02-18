@@ -1,5 +1,6 @@
 G2M::Application.routes.draw do
   resources :tickets
+  resources :static_pages
 
   resources :records, :except => [:index, :show, :destroy] do
   	collection do

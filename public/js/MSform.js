@@ -1,4 +1,10 @@
-function MSform( mailto, mailsub ){
+function MSform( mailto, mailsub, callback ){
+
+	var self = this;
+
+	if (typeof( callback ) == 'function' ) {
+		self.callback = callback;
+	}
 	//define the rules of validation
 	var valid = {
 		check: function(){
@@ -181,35 +187,13 @@ function MSform( mailto, mailsub ){
 		if(!valid.check()){
 			alert("請將表單填寫完整。");
 			return false;
+		} else {
+			self.callback();
 		}
-		var mailBody = valid.getMailBody();
-		$("#copy-content").val(mailBody);
-
-		$("#tips").show(function(){
-			$("#copy-button").zclip({
-				path:"js/ZeroClipboard.swf",
-				copy:function(){
-					return $("#copy-content").val();
-				}
-			})
-			.click(function(){
-				$("#copy-button").addClass("copy-success").html("已複製完成");
-			});
-		});
-		
-		var url = mailto + "?subject=" + Url.encode(mailsub) + "&body=" + Url.encode(mailBody);
-		var w = window.open("mailto:"+url);		
-
-		
-		window.open("mailto.htm");
-
-		setTimeout( function() {
-			if (w.document.location.href.search('microsoft') < 50) { w.close(); }
-		}, 100 );
-
-		event.preventDefault();
+	
+		return true;
 	});
-
+	
 	$(".checkbox :checkbox, .radio :radio").click(function() {
         if ($(this).is(":checked")) {
          $(this).parent("div.boxgroup:first").children("input").not(":checked").each(function() {

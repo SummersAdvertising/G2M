@@ -12,18 +12,12 @@
 <script src="/js/jquery-1.10.2.min.js"></script>
 <script src="/js/auto-full-height.min.js"></script>
 <script type="text/javascript" src="/js/MSform.js"></script>
-
 <script>
+
 $(function(){
-  MSform("test@example.com", "Set mail title here.");
+  MSform("test@example.com", "Set mail title here.", function() { alert('感謝您參與本次活動，我們將於 10 個工作日回覆您！') });
 });
 
-<% if flash[ :notice ] %>
-
-	alert('<%= flash[:notice] %>');
-
-<% flash.delete( :notice ) %>
-<% end %>
 
 </script>
 </head>
@@ -224,6 +218,7 @@ $(function(){
     
     </div>
   <% end %>
+  
   <!--article-->
 <!-- START OF SmartSource Data Collector TAG --> 
 <!-- Copyright (c) 1996-2009 WebTrends Inc.  All rights reserved. --> 
