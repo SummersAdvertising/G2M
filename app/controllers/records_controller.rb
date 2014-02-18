@@ -61,7 +61,7 @@ class RecordsController < ApplicationController
                          "Q1" => "難管的員工，只是想做得更好，才會帶自己的電腦來工作，如果您改用 Windows 8.1，便能了解新的工作方式有多迷人<br><a href='http://www.microsoft.com/zh-tw/windows/business/retiring-xp.aspx' target='_blank'>了解更多 Windows 8.1 >></a>", 
                          "Q2" => "善變的員工中，有相當多人是以研究新舊產品間的創新為己任，如果公司想做科技投資，這些人是很好的顧問，也可以請他們來研究繼續使用 Windows XP 的風險　<a href='http://www.microsoft.com/zh-tw/windows/business/retiring-xp.aspx' target='_blank'>了解更多 Windows XP 風險 >></a>", 
                          "Q3" => "不拘小節的員工，有些天份與不拘小節是綁在一起的，例如創造力！公司對於資料的保密，要利用嚴謹的規則來取代限制，如強制將每一支使用的隨身碟都加密　<a href='http://windows.microsoft.com/zh-tw/windows-8/using-device-encryption' target='_blank'>了解更多 Windows 8.1 的加密功能 >></a>", 
-                         "Q4" => "面對花俏的員工，您可以仔細觀察他們是如何花悄的工作，其中的行動工作能力或許是公司下一步競爭力的良方呢<br><a href='http://windows.microsoft.com/zh-tw/windows-8/tablets?woldogcb=0' target='_blank'>了解更多 Windows 平板 >></a>", 
+                         "Q4" => "面對花俏的員工，您可以仔細觀察他們是如何花俏的工作，其中的行動工作能力或許是公司下一步競爭力的良方呢<br><a href='http://windows.microsoft.com/zh-tw/windows-8/tablets?woldogcb=0' target='_blank'>了解更多 Windows 平板 >></a>", 
                          "Q5" => "質疑老闆判斷的員工，俗話說在組織內唱反調的員工才難得，當您把更直接的證據拿出來時，也才能讓組織真正學到您的經驗與知識<br><a href='http://office.microsoft.com/zh-tw/excel-help/HA102901475.aspx' target='_blank'>了解更多 Office 2013 的 PowerView >></a>", 
                          "Q6" => "關於上班也在 FB 的員工，說真的是有不少在浪費上班時間，但如果能讓員工透過 FB 更了解客戶，相信對業務也是有很大幫助的<br><a href='http://windows.microsoft.com/zh-tw/windows-8/personalize-pc-tutorial#customize' target='_blank'>了解更多 Windows 8.1 動態磚>></a>"
                         }
@@ -71,7 +71,7 @@ class RecordsController < ApplicationController
                       "Q1_title" => "老闆堅持電腦壞了才能換──", "Q1_sub" => "大家的電腦都好慢，且職人雜誌的 e 化工作效率提升術，都跟我無關，因為公司電腦太過老舊", "Q1_detail" => "路不轉人轉，您可以帶自己的電腦工作，不論平板或電腦，只要是跑 Windows 8.1，就能與流行的雲端、觸控接軌，還可藉此刺激老闆幫公司電腦升級。", 
                       "Q1_1_sub" => "請問您的公司是否還在使用 Windows XP？",
                       "Q1_2_sub" => "請問您是否自帶電腦／平板上班？",
-                      "Q2_title" => "老闆的生活比工作先進──", "Q2_sub" => "老闆擁有高級的平板或智慧手機，但只是拿來娛樂用", "Q2_detail" => "確實，很多老闆並不善於在工作上使用新工具，您可以推薦老闆使用 Windows平板，當他發現平板也能跑 Office 處理商務時，或許也會為員工更新設備，縮短公司數位落差。", 
+                      "Q2_title" => "老闆的生活比工作先進──", "Q2_sub" => "老闆擁有高級的平板或智慧手機，但只是拿來娛樂用", "Q2_detail" => "確實，很多老闆並不善於在工作上使用新工具，您可以推薦老闆使用 Windows 平板，當他發現平板也能跑 Office 處理商務時，或許也會為員工更新設備，縮短公司數位落差。", 
                       "Q3_title" => "老闆就是疑神疑鬼──", "Q3_sub" => "看到我們上社群網站就覺得我們在摸魚，可是我們需要關注客戶動態啊！", "Q3_detail" => "Windows 8.1 動態磚讓您隨時看見客戶最新社群訊息，不必特別進入社群網站，治好老闆疑心病。", 
                       "Q3_1_sub" => "請問您會在社群網站與客戶互動嗎？",
                       "Q3_2_sub" => "請問您上班時需要上社群網站來幫助工作嗎？",
@@ -121,7 +121,7 @@ class RecordsController < ApplicationController
                          "Q1" => "難管的員工，只是想做得更好，才會帶自己的電腦來工作，如果您改用 Windows 8.1，便能了解新的工作方式有多迷人<br><a href='http://www.microsoft.com/zh-tw/windows/business/retiring-xp.aspx' target='_blank'>了解更多 Windows 8.1 >></a>", 
                          "Q2" => "善變的員工中，有相當多人是以研究新舊產品間的創新為己任，如果公司想做科技投資，這些人是很好的顧問，也可以請他們來研究繼續使用 Windows XP 的風險　<a href='http://www.microsoft.com/zh-tw/windows/business/retiring-xp.aspx' target='_blank'>了解更多 Windows XP 風險 >></a>", 
                          "Q3" => "不拘小節的員工，有些天份與不拘小節是綁在一起的，例如創造力！公司對於資料的保密，要利用嚴謹的規則來取代限制，如強制將每一支使用的隨身碟都加密　<a href='http://windows.microsoft.com/zh-tw/windows-8/using-device-encryption' target='_blank'>了解更多 Windows 8.1 的加密功能 >></a>", 
-                         "Q4" => "面對花俏的員工，您可以仔細觀察他們是如何花悄的工作，其中的行動工作能力或許是公司下一步競爭力的良方呢<br><a href='http://windows.microsoft.com/zh-tw/windows-8/tablets?woldogcb=0' target='_blank'>了解更多 Windows 平板 >></a>", 
+                         "Q4" => "面對花俏的員工，您可以仔細觀察他們是如何花俏的工作，其中的行動工作能力或許是公司下一步競爭力的良方呢<br><a href='http://windows.microsoft.com/zh-tw/windows-8/tablets?woldogcb=0' target='_blank'>了解更多 Windows 平板 >></a>", 
                          "Q5" => "質疑老闆判斷的員工，俗話說在組織內唱反調的員工才難得，當您把更直接的證據拿出來時，也才能讓組織真正學到您的經驗與知識<br><a href='http://office.microsoft.com/zh-tw/excel-help/HA102901475.aspx' target='_blank'>了解更多 Office 2013 的 PowerView >></a>", 
                          "Q6" => "關於上班也在 FB 的員工，說真的是有不少在浪費上班時間，但如果能讓員工透過 FB 更了解客戶，相信對業務也是有很大幫助的<br><a href='http://windows.microsoft.com/zh-tw/windows-8/personalize-pc-tutorial#customize' target='_blank'>了解更多 Windows 8.1 動態磚>></a>"
                         }
@@ -131,7 +131,7 @@ class RecordsController < ApplicationController
                       "Q1_title" => "老闆堅持電腦壞了才能換──", "Q1_sub" => "大家的電腦都好慢，且職人雜誌的 e 化工作效率提升術，都跟我無關，因為公司電腦太過老舊", "Q1_detail" => "路不轉人轉，您可以帶自己的電腦工作，不論平板或電腦，只要是跑 Windows 8.1，就能與流行的雲端、觸控接軌，還可藉此刺激老闆幫公司電腦升級。", 
                       "Q1_1_sub" => "請問您的公司是否還在使用 Windows XP？",
                       "Q1_2_sub" => "請問您是否自帶電腦／平板上班？",
-                      "Q2_title" => "老闆的生活比工作先進──", "Q2_sub" => "老闆擁有高級的平板或智慧手機，但只是拿來娛樂用", "Q2_detail" => "確實，很多老闆並不善於在工作上使用新工具，您可以推薦老闆使用 Windows平板，當他發現平板也能跑 Office 處理商務時，或許也會為員工更新設備，縮短公司數位落差。", 
+                      "Q2_title" => "老闆的生活比工作先進──", "Q2_sub" => "老闆擁有高級的平板或智慧手機，但只是拿來娛樂用", "Q2_detail" => "確實，很多老闆並不善於在工作上使用新工具，您可以推薦老闆使用 Windows 平板，當他發現平板也能跑 Office 處理商務時，或許也會為員工更新設備，縮短公司數位落差。", 
                       "Q3_title" => "老闆就是疑神疑鬼──", "Q3_sub" => "看到我們上社群網站就覺得我們在摸魚，可是我們需要關注客戶動態啊！", "Q3_detail" => "Windows 8.1 動態磚讓您隨時看見客戶最新社群訊息，不必特別進入社群網站，治好老闆疑心病。", 
                       "Q3_1_sub" => "請問您會在社群網站與客戶互動嗎？",
                       "Q3_2_sub" => "請問您上班時需要上社群網站來幫助工作嗎？",
