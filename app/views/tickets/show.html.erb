@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/form.css">
 
+<script type="text/javascript" src="/js/iframeheight.js"></script>
+
 <%= javascript_include_tag 'application' %>
 <%= stylesheet_link_tag 'application' %>
 
@@ -34,6 +36,12 @@
 
 <script>
 	//setTimeout(function() { window.location.href = '<%= new_ticket_path %>'; }, 2000);
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.iframeHeightExternal(); // if you change default settings, you must add your setting object to this function
+    });
 </script>
 
 </body>
