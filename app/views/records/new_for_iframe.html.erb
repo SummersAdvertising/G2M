@@ -9,10 +9,10 @@
 
     <meta name="keywords" content="Windows XP終止支援,Office 2003終止支援,EOS,XP終止支援,XP EOS,中小企業優惠,Windows平板,Office 2013,Office 365,Windows 8.1,win 8.1,win 7, win 8"/>
     <title>老闆囧很大－職場微心結大調查，參加就抽無線劇院！</title>
-    <meta name="description" content="老闆、員工悶氣別再憋了！快來填秘密問卷一吐為快，不但立即獲得實用解方，化解職場微心結，還可抽最大獎無線劇院，更有優惠方案幫您輕鬆升級最新科技，就算 Windows XP / Office 2003 將於 2014/4/8 終止支援也不囧。"/>
+    <meta name="description" content="老闆、員工悶氣別再憋了！快來填秘密問卷一吐為快，不但立即獲得實用解方，化解職場微心結，還可抽最大獎無線家庭劇院，更有優惠方案幫您輕鬆升級最新科技，就算 Windows XP / Office 2003 將於 2014/4/8 終止支援也不囧。"/>
     <meta property="og:site_name" content="老闆囧很大"/>
     <meta property="og:title" content="老闆囧很大－職場微心結大調查，參加就抽無線劇院！"/>
-    <meta property="og:description" content="老闆、員工悶氣別再憋了！快來填秘密問卷一吐為快，不但立即獲得實用解方，化解職場微心結，還可抽最大獎無線劇院，更有優惠方案幫您輕鬆升級最新科技，就算 Windows XP / Office 2003 將於 2014/4/8 終止支援也不囧。"/>
+    <meta property="og:description" content="老闆、員工悶氣別再憋了！快來填秘密問卷一吐為快，不但立即獲得實用解方，化解職場微心結，還可抽最大獎無線家庭劇院，更有優惠方案幫您輕鬆升級最新科技，就算 Windows XP / Office 2003 將於 2014/4/8 終止支援也不囧。"/>
     <meta property="og:type" content="product"/>
 
     <meta name="DC.Rights" content="台灣微軟"/>
@@ -36,35 +36,24 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/detect.css">
-    <!-- <script src="/js/auto-full-height.min.js"></script> -->
+    <script src="/js/auto-full-height.min.js"></script>
     <script src="/js/iframeheight.js"></script>
 
     <style type="text/css">
+    html, body { background: none; }
     .questions { display: none; }
+
+    #header { height:242px }
+    #header h1{ top:5px }
+    #header .text{ top:78px }
+
+    .send{ padding:0 0 50px 0 }
+
+    .formError .formErrorContent{top:-15px!important}
+
+
     </style>
 
-    <script>
-$(function(){ 
-  var _showTab = 0;
-  var $defaultLi = $('#tab ul li').eq(_showTab);
-  
-  $('#tab ul li').click(function(e) {
-    e.preventDefault();
-
-    var $this = $(this),
-      _clickTab = $this.find('a');
-    $this.addClass('active').siblings('.active').removeClass('active');   
-    $(_clickTab.attr('href')).stop(false, true).fadeIn(1000).siblings().hide();
-
-    $("#record_user_type").val( _clickTab.data("value") );
-
-    return false;
-  }).find('a').focus(function(){
-    this.blur();
-  });
-});
-
-</script>
 <script type="text/javascript">
   $(document).ready(function(){
 
@@ -75,8 +64,8 @@ $(function(){
   </script>
 </head>
 
-<body data-height="">
-    <div id="wrapper">
+<body>
+    <div id="wrapper" style="height:1700px;">
         <div id="header" _height="none">
             <h1>老闆囧很大</h1>
             <div class="text"><img src="/images/d-01.png"/></div>
@@ -89,7 +78,7 @@ $(function(){
             <div id="intro">
                 <h3>
                     答題、分享、再抽獎
-                    <a href="#">詳細活動辦法&gt;&gt;</a>
+                    <!-- <a href="#">詳細活動辦法&gt;&gt;</a> -->
                 </h3>
                 <p>
                     1. 請作答以下題目，完成後按「看結果」
@@ -518,8 +507,32 @@ $(function(){
         <% end %>
     </div>
 </body>
+
 <script type="text/javascript">
-var form = $("form#new_record");
+  $(document).ready(function(){
+    var iframeExt = $.iframeHeightExternal();
+
+    var _showTab = 0;
+    var $defaultLi = $('#tab ul li').eq(_showTab);
+
+    $('#tab ul li').click(function(e) {
+        e.preventDefault();
+        //iframeExt.update();
+
+        var $this = $(this),
+        _clickTab = $this.find('a');
+
+        $this.addClass('active').siblings('.active').removeClass('active');   
+        $(_clickTab.attr('href')).stop(false, true).fadeIn(1000).siblings().hide();
+
+        $("#record_user_type").val( _clickTab.data("value") );
+
+        return false;
+    }).find('a').focus(function(){
+        this.blur();
+    });
+
+    var form = $("form#new_record");
 form.validationEngine();
 
 $("input.has_children, input.hide_children").change(function(){
@@ -527,11 +540,15 @@ $("input.has_children, input.hide_children").change(function(){
     if( $this.is(":checked") ){
         switch($this.is(".has_children")) {
             case true:
-            $this.parent().next('.second').stop().show(500).children("input").addClass("validate[required]");
+            $this.parent().next('.second').stop().show(500, function(){
+            //iframeExt.update();
+        }).children("input").addClass("validate[required]");
             break;
 
             case false:
-            $this.parent().next('.second').stop().hide(500).children("input").removeClass("validate[required]").prop("checked", false);
+            $this.parent().next('.second').stop().hide(500, function(){
+            //iframeExt.update();
+        }).children("input").removeClass("validate[required]").prop("checked", false);
             break;
         }
     }
@@ -548,16 +565,14 @@ form.submit(function(){
     answerObj.yes_count = answers.filter( "[value='yes']" ).length;
     
     var input_record_answer = $("<input>").attr("type", "hidden").attr("name", "record[answer]").val( JSON.stringify(answerObj) );
+    var input_record_type = $("<input>").attr("type", "hidden").attr("name", "from").val("iframe");
 
-    form.append(input_record_answer);
+    form.append(input_record_answer).append(input_record_type);
     
     // return false;
     return $(this).validationEngine('validate');
 });
-</script>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $.iframeHeightExternal();
+
   });
   </script>
 </html>

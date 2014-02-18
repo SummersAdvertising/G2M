@@ -3,12 +3,15 @@
 
 /* Z-INDEX */
  .formError { z-index: 990; }
+
     .formError .formErrorContent { z-index: 991; }
     .formError .formErrorArrow { z-index: 996; }
 
     .ui-dialog .formError { z-index: 5000; }
     .ui-dialog .formError .formErrorContent { z-index: 5001; }
     .ui-dialog .formError .formErrorArrow { z-index: 5006; }
+
+
 
 
 
@@ -25,6 +28,8 @@
 	display: block;
 	cursor: pointer;
 	text-align: left;
+	opacity: 1!important;
+	filter:alpha(opacity=100)!important;
 }
 
 .formError.inline {
@@ -60,6 +65,17 @@
 	-o-border-radius: 6px;
 }
 
+.formError .formErrorContent{
+        border:none!important;
+        box-shadow:none!important;
+        -webkit-box-shadow:none!important;
+        -o-box-shadow:none!important;
+        
+        text-align:center!important;
+        padding:4px 10px 0 10px!important;
+        background:#EB6100!important
+}
+
 .formError.inline .formErrorContent {
 	box-shadow: none;
 	-moz-box-shadow: none;
@@ -85,6 +101,7 @@
 	width: 15px;
 	margin: -2px 0 0 13px;
 	position:relative;
+	display:none;
 }
 body[dir='rtl'] .formError .formErrorArrow,
 body.rtl .formError .formErrorArrow {
@@ -180,3 +197,5 @@ body.rtl .formError .formErrorArrow {
 	border: none;
 	background: #ddd;
 }
+
+

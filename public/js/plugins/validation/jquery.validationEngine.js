@@ -337,7 +337,6 @@
 			form.trigger("jqv.form.validating");
 			// first, evaluate status of non ajax fields
 			var first_err=null;
-			console.log(form.find('['+options.validateAttribute+'*=validate]'))
 			form.find('['+options.validateAttribute+'*=validate]').not(":disabled").each( function() {
 				var field = $(this);
 				var names = [];
@@ -708,7 +707,7 @@
 
 				// If we have a string, that means that we have an error, so add it to the error message.
 				if (typeof errorMsg == 'string') {
-					promptText += errorMsg + "<br/>";
+					promptText += errorMsg + " ";
 					options.isError = true;
 					field_errors++;
 				}
