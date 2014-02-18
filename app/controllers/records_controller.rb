@@ -188,13 +188,8 @@ class RecordsController < ApplicationController
       if ( @record.user_fbid || @record.update_attributes(params[:record]) )
         @signup.update_attributes(params[:signup])
 
-        if params[:from] == "iframe"
-          format.html { redirect_to thanks_records_path }
-          format.json { head :no_content }
-        else
-          format.html { redirect_to root_path, notice: '參加成功。'  }
-          format.json { head :no_content }
-        end
+        format.html { redirect_to thanks_records_path }
+        format.json { head :no_content }
 
       else
         flash[:alert] = "#{ @record.errors.full_messages.join("\\n").html_safe }"
