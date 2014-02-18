@@ -89,7 +89,8 @@ $(function(){
 	<div id="wrapper">
 		<div id="header" _height="none">
             <h1>老闆囧很大</h1>
-            <div class="text"><img src=<% @record.user_type == "worker" ? "/images/r-00.png" : "/images/r-01.png"  %>/></div>
+            <div class="text"><img src="<%= (@record.user_type == "worker") ? "/images/r-00.png" : "/images/r-01.png"  %>"/>
+            </div>
         </div>
 		<!--header-->
 		<div id="article" _height="auto">
