@@ -83,6 +83,7 @@ GEM
       activesupport (= 3.2.8)
       bundler (~> 1.0)
       railties (= 3.2.8)
+    rails-alertify (0.3.2)
     railties (3.2.8)
       actionpack (= 3.2.8)
       activesupport (= 3.2.8)
@@ -124,6 +125,7 @@ DEPENDENCIES
   jquery-rails
   mysql2
   rails (= 3.2.8)
+  rails-alertify
   sass-rails (~> 3.2.3)
   sextant
   sqlite3

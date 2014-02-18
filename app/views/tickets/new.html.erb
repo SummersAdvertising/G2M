@@ -9,13 +9,22 @@
 <link rel="stylesheet" href="/css/reset.css">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/form.css">
-<script src="/js/jquery-1.10.2.min.js"></script>
+
+<%= javascript_include_tag 'application' %>
+<%= stylesheet_link_tag 'application' %>
+
 <script src="/js/auto-full-height.min.js"></script>
 <script type="text/javascript" src="/js/MSform.js"></script>
 <script>
 
+
 $(function(){
-  MSform("test@example.com", "Set mail title here.", function() { alert('感謝您參與本次活動，我們將於 10 個工作日回覆您！') });
+
+<% if flash[ :notice ] %>
+	alertify.alert('<%=  flash[ :notice ] %>')
+<% end %>
+
+  MSform("test@example.com", "Set mail title here.", function() { });
 });
 
 
