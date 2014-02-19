@@ -26,7 +26,7 @@
 	<link rel="image_src" href="/images/thumb.jpg">
 	<link rel="stylesheet" href="/css/reset.css">
 	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/css/form.css">
+	<link rel="stylesheet" href="/css/detect.css">
 
 	<%= javascript_include_tag 'application' %>
 	<%= stylesheet_link_tag 'application' %>
@@ -36,23 +36,25 @@
 </head>
 
 <body>
-<div id="wrapper">
-   <div id="header" _height="none">
-            <h1>老闆囧很大</h1>
-            <div class="text"><img src="<%= (@record.user_type == "worker") ? "/images/r-00.png" : "/images/r-01.png"  %>"/>
-            </div>
-        </div>
-		<!--header-->
-	<article _height="auto" style=" background:white ">
-		<section class="content" style=" padding: 180px 0 120px; background: white;">
-			<div style="width: 930px; margin: 0 auto;">
-				<hgroup>
-					<h1 style="text-align: center; font-size: 36px; font-wieght: 600; padding: 24px; ">感謝您參與本次活動。</h1>
-				</hgroup>
+	<div id="wrapper">
+		<div id="header" _height="none">
+			<h1>老闆囧很大</h1>
+			<div class="text">
+				<img src="/images/r-01.png"/>
 			</div>
-		</section>
-	</article>
-</div>
+		</div>
+		<!--header-->
+		<article _height="auto" style=" background:white ">
+			<section class="content" style=" padding: 180px 0 120px; background: white;">
+				<div style="width: 930px; margin: 0 auto;">
+					<div id="hgroup" style="background: white;">
+						<h1 style="font-size: 36px; font-wieght: 600; padding: 24px; ">
+							感謝您參與本次活動。</h1>
+					</div>
+				</div>
+			</section>
+		</article>
+	</div>
 	<script>
 	//setTimeout(function() { window.location.href = '<%= new_ticket_path %>'; }, 2000);</script>
 
