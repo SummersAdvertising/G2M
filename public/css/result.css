@@ -1,4 +1,5 @@
-#header h1{top:45px}
+#header h1{background:url(/images/s-02.png) 0 0 no-repeat;width:429px;height:198px;text-indent:-7777px;
+position:absolute;top:85px;left:112px;top:45px}
 #header h1 a:hover{top:80px}
 #header .text{position:absolute;right:123px;top:165px}
 
