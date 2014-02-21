@@ -76,34 +76,42 @@
             <%= f.hidden_field(:user_type) %>
 
             <div id="intro">
-                <h3>
-                    答題、分享、再抽獎
-                    <!-- <a href="#">詳細活動辦法&gt;&gt;</a> -->
-                </h3>
-                <p>
-                    1. 請作答以下題目，完成後按「看結果」
-                    <br>
-                    2. 請填寫抽獎資料，並按「送出資料並分享至 Facebook」
-                    <br>
-                    3. 分享至 Facebook 是本活動內容，並非您的答案，請您放心
-                    <br>
-                    4. <b>必須完成 Facebook 分享才具備抽獎資格</b>
-                </p>
+                <h3>答題、分享、再抽獎</h3>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="25%" valign="top">1. 請作答以下題目，完成後按「看結果」</td>
+                        <td width="25%" valign="top">2. 請填寫抽獎資料，並按「送出資料並分享至 Facebook」</td>
+                        <td width="25%" valign="top">3. 分享至 Facebook 是本活動內容，並非您的答案，請您放心</td>
+                        <td width="25%" valign="top" style="background:none">
+                            4. <b>必須完成 Facebook 分享才具備抽獎資格</b>
+                        </td>
+                    </tr>
+                </table>
+            </p>
             </div>
             <div id="tab">
-                <h3>請問您是：</h3>
-                <ul>
-                    <li>
-                        <a href=".owner" data-value="owner">企業負責人</a>
-                    </li>
-                    <li>
-                        <a href=".manager" data-value="manager">主管、經理人</a>
-                    </li>
-                    <li>
-                        <a href=".worker" data-value="worker">職人、專業工作者</a>
-                    </li>
-                </ul>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="15%">
+                        <h3>請問您是：</h3>
+                    </td>
+                    <td width="85%">
+                        <ul>
+                            <li>
+                                <a href=".owner" data-value="owner">企業負責人</a>
+                            </li>
+                            <li>
+                                <a href=".manager" data-value="manager">主管、經理人</a>
+                            </li>
+                            <li>
+                                <a href=".worker" data-value="worker">職人、專業工作者</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
             </div>
+            
             <div id="detect">
                 <div class="questions owner">
                     <h4> <b>請問老闆</b>

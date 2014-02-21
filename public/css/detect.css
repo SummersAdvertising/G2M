@@ -8,7 +8,7 @@ position:absolute;top:85px;left:112px}
 
 #article{padding:45px 115px}
 
-#article h3{color:#0068b7;font:900 33px 微軟正黑體,Microsoft JhengHei;line-height:1.7em}
+#article h3{color:#0068b7;font:900 28px 微軟正黑體,Microsoft JhengHei;line-height:1.7em}
 #article h3 a{color:#00a0e9;font-size:20px;margin:0 0 0 5px}
 #article h3 a:hover{text-decoration:underline}
 #article h4{font:900 20px 微軟正黑體,Microsoft JhengHei;color:#1b1b1b}
@@ -16,12 +16,12 @@ position:absolute;top:85px;left:112px}
 
 #intro p{line-height:2em;font-size:18px}
 #intro b{background:#FFF100;font-weight:900;padding:2px 5px}
+#intro td{background:url(/images/d-04.gif) 200px center no-repeat;padding:0 40px 0 0}
 
 #tab{overflow:hidden;margin:50px 0}
-#tab li{float:left;margin:0 15px}
-#tab li a{width:265px;height:66px;display:block;font:900 24px 微軟正黑體,Microsoft JhengHei;text-align:center;
-background:url(/images/d-02.jpg) 0 0 no-repeat;color:#505050;padding:18px 0 0 0}
-#tab li a{ text-decoration:none }
+#tab{overflow:hidden;margin:30px 0}
+#tab li{float:left;margin:0 0 0 10px}
+#tab li a{width:239px;height:66px;display:block;font:900 24px 微軟正黑體,Microsoft JhengHei;text-align:center;background:url(/images/d-02.jpg) 0 0 no-repeat;color:#505050;padding:15px 0 0 0}
 #tab .active a{background:url(/images/d-02h.jpg) 0 0 no-repeat}
 
 #detect .gray{background:#F5F5F5}
