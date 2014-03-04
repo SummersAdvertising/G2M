@@ -5,6 +5,7 @@ G2M::Application.routes.draw do
   resources :records, :except => [:index, :show, :destroy] do
   	collection do
   		get :new_for_iframe
+  		get :export
   	end
 
   	member do

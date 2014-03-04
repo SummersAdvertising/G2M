@@ -213,4 +213,36 @@ class RecordsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def export
+  	@records = Record.order( :created_at => :desc )
+  	
+  	respond_to do | format |
+  		format.xls {}
+  	end
+  end
+  
+private
+  def authenticate_download
+  	if request.remote_ip != '127.0.0.1' && request.remote_ip != '220.133.14.87'
+  		puts 'ip 不允許，跳離。'
+  		redirect_to root_url
+  	end
+  	
+  	authenticate_or_request_with_http_basic do | username, password |
+  		if Digest::SHA1.hexdigest( username ) == '' && Disges::SHA1.hexdigest( password ) == ''
+  			true
+  		end
+  		
+	  	session[ :try_download ] = session[ :try_download ].nil? ? 0 : session[ :try_download ]+1
+	  	
+	  	if session[ :try_download ] > 5
+	  		redirect_to root_url
+	  	end    
+    	  	
+  	end
+  	
+  	
+  end  
+  
 end
