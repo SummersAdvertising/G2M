@@ -14,21 +14,24 @@
 <%= stylesheet_link_tag 'application' %>
 
 <script type="text/javascript" src="/js/iframeheight.js"></script>
-
+<style>
+html,body,#wrapper{background:none!important;}
+</style>
 
 </head>
 
 <body>
 
-<article _height="auto">
-<section class="content" style=" padding: 180px 0 120px; background: white;">
-	<div style="width: 930px; margin: 0 auto;">		
-		<hgroup>		
-			<h1 style="font-size: 36px; font-wieght: 600; padding: 24px; ">感謝您參與本次活動，我們將於 10 個工作日回覆您！</h1>
-		</hgroup>
-	</div>
-</section>
-</article>
+	<article>
+			<section class="content">
+				<div style="width: 100%;background:white;text-align:center;padding:50px 0">
+					<div id="hgroup">
+						<h1 style="font-size: 36px; font-wieght: 600; ">
+							感謝您參與本次活動，我們將於 10 個工作日回覆您！</h1>
+					</div>
+				</div>
+			</section>
+		</article>
 
 <script>
 	//setTimeout(function() { window.location.href = '<%= new_ticket_path %>'; }, 2000);

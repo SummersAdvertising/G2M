@@ -6,6 +6,7 @@ G2M::Application.routes.draw do
   	collection do
   		get :new_for_iframe
   		get :export
+  		get :thanks
   	end
 
   	member do

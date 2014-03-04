@@ -58,10 +58,10 @@ class RecordsController < ApplicationController
                     }
       
       @understandings = {
-                         "Q1" => "難管的員工，只是想做得更好，才會帶自己的電腦來工作，如果您改用 Windows 8.1，便能了解新的工作方式有多迷人<br><a href='http://www.microsoft.com/zh-tw/windows/business/retiring-xp.aspx' target='_blank'>了解更多 Windows 8.1 >></a>", 
+                         "Q1" => "難管的員工，只是想做得更好，才會帶自己的電腦來工作，如果您改用 Windows 8.1，便能了解新的工作方式有多迷人<br><a href='http://www.microsoft.com/zh-tw/windows/business/default.aspx' target='_blank'>了解更多 Windows 8.1 >></a>", 
                          "Q2" => "善變的員工中，有相當多人是以研究新舊產品間的創新為己任，如果公司想做科技投資，這些人是很好的顧問，也可以請他們來研究繼續使用 Windows XP 的風險　<a href='http://www.microsoft.com/zh-tw/windows/business/retiring-xp.aspx' target='_blank'>了解更多 Windows XP 風險 >></a>", 
-                         "Q3" => "不拘小節的員工，有些天份與不拘小節是綁在一起的，例如創造力！公司對於資料的保密，要利用嚴謹的規則來取代限制，如強制將每一支使用的隨身碟都加密　<a href='http://windows.microsoft.com/zh-tw/windows-8/using-device-encryption' target='_blank'>了解更多 Windows 8.1 的加密功能 >></a>", 
-                         "Q4" => "面對花俏的員工，您可以仔細觀察他們是如何花俏的工作，其中的行動工作能力或許是公司下一步競爭力的良方呢<br><a href='http://windows.microsoft.com/zh-tw/windows-8/tablets?woldogcb=0' target='_blank'>了解更多 Windows 平板 >></a>", 
+                         "Q3" => "不拘小節的員工，有些天份與不拘小節是綁在一起的，例如創造力！公司對於資料的保密，要利用嚴謹的規則來取代限制，如強制將每一支使用的隨身碟都加密　<a href='http://windows.microsoft.com/zh-tw/windows-8/bitlocker-drive-encryption' target='_blank'>了解更多 Windows 8.1 的加密功能 >></a>", 
+                         "Q4" => "面對花俏的員工，您可以仔細觀察他們是如何花俏的工作，其中的行動工作能力或許是公司下一步競爭力的良方呢<br><a href='http://www.microsoft.com/zh-tw/windows/business/NewWindows/BestTabletPCs.aspx' target='_blank'>了解更多 Windows 平板 >></a>", 
                          "Q5" => "質疑老闆判斷的員工，俗話說在組織內唱反調的員工才難得，當您把更直接的證據拿出來時，也才能讓組織真正學到您的經驗與知識<br><a href='http://office.microsoft.com/zh-tw/excel-help/HA102901475.aspx' target='_blank'>了解更多 Office 2013 的 PowerView >></a>", 
                          "Q6" => "關於上班也在 FB 的員工，說真的是有不少在浪費上班時間，但如果能讓員工透過 FB 更了解客戶，相信對業務也是有很大幫助的<br><a href='http://windows.microsoft.com/zh-tw/windows-8/personalize-pc-tutorial#customize' target='_blank'>了解更多 Windows 8.1 動態磚>></a>"
                         }
@@ -83,12 +83,12 @@ class RecordsController < ApplicationController
                     }
 
       @understandings = {
-                         "Q1" => "老闆堅持電腦壞了才能換，對很多白手起家的老闆是合理的想法，要改變他們需依循「身教重於言教」的原則，您不妨嘗試自帶先進的電腦工作，改善自己的產能，順便教導老闆新科技的價值　<a href='http://www.microsoft.com/zh-tw/windows/business/retiring-xp.aspx' target='_blank'>了解更多 Windows 8.1 >></a>", 
-                         "Q2" => "老闆的生活比工作先進，其實這樣的老闆遠較「生活比工作落後」的老闆好多了，只要讓他們了解 Windows 平板對工作的幫助，或許明天就配一台給您了　<a href='http://windows.microsoft.com/zh-tw/windows-8/tablets?woldogcb=0' target='_blank'>了解更多 Windows 平板 >></a>", 
+                         "Q1" => "老闆堅持電腦壞了才能換，對很多白手起家的老闆是合理的想法，要改變他們需依循「身教重於言教」的原則，您不妨嘗試自帶先進的電腦工作，改善自己的產能，順便教導老闆新科技的價值　<a href='http://www.microsoft.com/zh-tw/windows/business/NewWindows/WhatsNew.aspx' target='_blank'>了解更多 Windows 8.1 >></a>", 
+                         "Q2" => "老闆的生活比工作先進，其實這樣的老闆遠較「生活比工作落後」的老闆好多了，只要讓他們了解 Windows 平板對工作的幫助，或許明天就配一台給您了　<a href='http://www.microsoft.com/zh-tw/windows/business/NewWindows/YourWindowseverywhere.aspx' target='_blank'>了解更多 Windows 平板 >></a>", 
                          "Q3" => "老闆疑神疑鬼時，就要直接請他們來看臉書上客戶的動態，但如果您太常上 FB 從事自己的社交活動，請自重<br><a href='http://windows.microsoft.com/zh-tw/windows-8/personalize-pc-tutorial#customize' target='_blank'>了解更多 Windows 8.1 動態磚>></a>", 
-                         "Q4" => "老闆確實是需要開會的，只能請他們儘量利用科技來開會，並且提升自己的行動工作能力<br><a href='http://windows.microsoft.com/zh-tw/windows-8/tablets?woldogcb=0' target='_blank'>了解更多 Windows 平板 >></a>、<a href='http://www.microsoft.com/taiwan/office365/smb/default.aspx' target='_blank'>了解更多 Office 365 >></a>", 
+                         "Q4" => "老闆確實是需要開會的，只能請他們儘量利用科技來開會，並且提升自己的行動工作能力<br><a href='http://www.microsoft.com/zh-tw/windows/business/NewWindows/BestTabletPCs.aspx' target='_blank'>了解更多 Windows 平板 >></a>、<a href='http://www.microsoft.com/taiwan/office365/smb/default.aspx' target='_blank'>了解更多 Office 365 >></a>", 
                          "Q5" => "要幫助不信任新科技的老闆，要善用「事件」，比如新聞報導或調查報告，讓老闆了解老舊設備的風險<br><a href='http://www.microsoft.com/zh-tw/windows/business/retiring-xp.aspx' target='_blank'>了解更多 Windows XP 風險 >></a>", 
-                         "Q6" => "老闆喜歡喊口號創新？難免啦，畢竟真的創新難為，但工作不只是為了公司，也是為了自己，投資自己創新所需的一切，才是真正的職場晉升之道　<a href='http://www.microsoft.com/zh-tw/windows/business/retiring-xp.aspx' target='_blank'>了解更多 Windows 8.1 的創新之處>></a>"
+                         "Q6" => "老闆喜歡喊口號創新？難免啦，畢竟真的創新難為，但工作不只是為了公司，也是為了自己，投資自己創新所需的一切，才是真正的職場晉升之道　<a href='http://www.microsoft.com/zh-tw/windows/business/NewWindows/WhatsNew.aspx' target='_blank'>了解更多 Windows 8.1 的創新之處>></a>"
                         }
     end
 
@@ -104,11 +104,11 @@ class RecordsController < ApplicationController
     case @record.user_type
     when "owner", "manager"
       @resolutions = {
-                      "Q1_title" => "難管的員工 ──", "Q1_sub" => "公司比較優秀的員工都用自己的電腦工作，資料檔案無法掌控，真可怕", "Q1_detail" => "親愛的老闆，員工自己帶電腦原因不外乎：平板、觸控、雲端整合，這些也是Windows 8.1 的優點，如果將公司電腦升級，相信可以滿足員工需求，也能取回資料掌控權。", 
+                      "Q1_title" => "難管的員工 ──", "Q1_sub" => "公司比較優秀的員工都用自己的電腦工作，資料檔案無法掌控，真可怕", "Q1_detail" => "親愛的老闆，員工自己帶電腦原因不外乎：平板、觸控、雲端整合，這些也是 Windows 8.1 的優點，如果將公司電腦升級，相信可以滿足員工需求，也能取回資料掌控權。", 
                       "Q1_1_sub" => "請問您公司自帶電腦或平板的員工，人數比例大約是：",
                       "Q2_title" => "善變的員工──", "Q2_sub" => "員工一季換一支手機，說這樣才跟得上時代，不過我總覺得東西好好的還沒壞，就不用換", "Q2_detail" => "親愛的老闆，東西有沒有壞並不是好的汰換標準，能不能趕上現代的工作效率更是重要，比方說 Windows XP 終止支援就代表那台電腦效能降低、不堪用了（了解風險請<a href='http://www.microsoft.com/zh-tw/windows/business/retiring-xp.aspx' target='_blank'>看這裡</a>）。", 
                       "Q2_1_sub" => "請問您公司是否仍然在使用 Windows XP？",
-                      "Q3_title" => "不拘小節的員工──", "Q3_sub" => "員工常把自己的隨身碟隨手亂放，我不想一直嘮叨這種「小事」，卻又擔心裡面其實裝的是公司檔案，一旦外流…", "Q3_detail" => "親愛的老闆，資料安全是公司大事，如果禁不了員工使用隨身碟，Windows 8.1能幫您輕鬆加密隨身碟、硬碟，從此您就可以放心了。", 
+                      "Q3_title" => "不拘小節的員工──", "Q3_sub" => "員工常把自己的隨身碟隨手亂放，我不想一直嘮叨這種「小事」，卻又擔心裡面其實裝的是公司檔案，一旦外流…", "Q3_detail" => "親愛的老闆，資料安全是公司大事，如果禁不了員工使用隨身碟，Windows 8.1 能幫您輕鬆加密隨身碟、硬碟，從此您就可以放心了。", 
                       "Q3_1_sub" => "請您估計一下，公司檔案大約放在幾支隨身碟、外接硬碟裡？",
                       "Q4_title" => "花俏的員工──", "Q4_sub" => "現在的員工老是想要「時尚」「個人風格」的辦公設備，都不考慮對工作是否實用", "Q4_detail" => "親愛的老闆，其實時尚及個人風格，代表的是一種工作方式的進步，比如變形平板不論在桌上工作，或帶出門展示，都比傳統筆電更靈活方便（<a href='http://www.microsoft.com/en-us/showcase/details.aspx?uuid=b2de17c7-43ba-4953-9dba-122ae0e51a2f' target='_blank'>請看這支影片</a>），中看更中用。", 
                       "Q4_1_sub" => "請問員工是否有將自己的平板或智慧型手機應用於工作？",
@@ -118,10 +118,10 @@ class RecordsController < ApplicationController
                     }
       
       @understandings = {
-                         "Q1" => "難管的員工，只是想做得更好，才會帶自己的電腦來工作，如果您改用 Windows 8.1，便能了解新的工作方式有多迷人<br><a href='http://www.microsoft.com/zh-tw/windows/business/retiring-xp.aspx' target='_blank'>了解更多 Windows 8.1 >></a>", 
+                         "Q1" => "難管的員工，只是想做得更好，才會帶自己的電腦來工作，如果您改用 Windows 8.1，便能了解新的工作方式有多迷人<br><a href='http://www.microsoft.com/zh-tw/windows/business/default.aspx' target='_blank'>了解更多 Windows 8.1 >></a>", 
                          "Q2" => "善變的員工中，有相當多人是以研究新舊產品間的創新為己任，如果公司想做科技投資，這些人是很好的顧問，也可以請他們來研究繼續使用 Windows XP 的風險　<a href='http://www.microsoft.com/zh-tw/windows/business/retiring-xp.aspx' target='_blank'>了解更多 Windows XP 風險 >></a>", 
-                         "Q3" => "不拘小節的員工，有些天份與不拘小節是綁在一起的，例如創造力！公司對於資料的保密，要利用嚴謹的規則來取代限制，如強制將每一支使用的隨身碟都加密　<a href='http://windows.microsoft.com/zh-tw/windows-8/using-device-encryption' target='_blank'>了解更多 Windows 8.1 的加密功能 >></a>", 
-                         "Q4" => "面對花俏的員工，您可以仔細觀察他們是如何花俏的工作，其中的行動工作能力或許是公司下一步競爭力的良方呢<br><a href='http://windows.microsoft.com/zh-tw/windows-8/tablets?woldogcb=0' target='_blank'>了解更多 Windows 平板 >></a>", 
+                         "Q3" => "不拘小節的員工，有些天份與不拘小節是綁在一起的，例如創造力！公司對於資料的保密，要利用嚴謹的規則來取代限制，如強制將每一支使用的隨身碟都加密　<a href='http://windows.microsoft.com/zh-tw/windows-8/bitlocker-drive-encryption' target='_blank'>了解更多 Windows 8.1 的加密功能 >></a>", 
+                         "Q4" => "面對花俏的員工，您可以仔細觀察他們是如何花俏的工作，其中的行動工作能力或許是公司下一步競爭力的良方呢<br><a href='http://www.microsoft.com/zh-tw/windows/business/NewWindows/BestTabletPCs.aspx' target='_blank'>了解更多 Windows 平板 >></a>", 
                          "Q5" => "質疑老闆判斷的員工，俗話說在組織內唱反調的員工才難得，當您把更直接的證據拿出來時，也才能讓組織真正學到您的經驗與知識<br><a href='http://office.microsoft.com/zh-tw/excel-help/HA102901475.aspx' target='_blank'>了解更多 Office 2013 的 PowerView >></a>", 
                          "Q6" => "關於上班也在 FB 的員工，說真的是有不少在浪費上班時間，但如果能讓員工透過 FB 更了解客戶，相信對業務也是有很大幫助的<br><a href='http://windows.microsoft.com/zh-tw/windows-8/personalize-pc-tutorial#customize' target='_blank'>了解更多 Windows 8.1 動態磚>></a>"
                         }
@@ -143,12 +143,12 @@ class RecordsController < ApplicationController
                     }
 
       @understandings = {
-                         "Q1" => "老闆堅持電腦壞了才能換，對很多白手起家的老闆是合理的想法，要改變他們需依循「身教重於言教」的原則，您不妨嘗試自帶先進的電腦工作，改善自己的產能，順便教導老闆新科技的價值　<a href='http://www.microsoft.com/zh-tw/windows/business/retiring-xp.aspx' target='_blank'>了解更多 Windows 8.1 >></a>", 
-                         "Q2" => "老闆的生活比工作先進，其實這樣的老闆遠較「生活比工作落後」的老闆好多了，只要讓他們了解 Windows 平板對工作的幫助，或許明天就配一台給您了　<a href='http://windows.microsoft.com/zh-tw/windows-8/tablets?woldogcb=0' target='_blank'>了解更多 Windows 平板 >></a>", 
+                         "Q1" => "老闆堅持電腦壞了才能換，對很多白手起家的老闆是合理的想法，要改變他們需依循「身教重於言教」的原則，您不妨嘗試自帶先進的電腦工作，改善自己的產能，順便教導老闆新科技的價值　<a href='http://www.microsoft.com/zh-tw/windows/business/NewWindows/WhatsNew.aspx' target='_blank'>了解更多 Windows 8.1 >></a>", 
+                         "Q2" => "老闆的生活比工作先進，其實這樣的老闆遠較「生活比工作落後」的老闆好多了，只要讓他們了解 Windows 平板對工作的幫助，或許明天就配一台給您了　<a href='http://www.microsoft.com/zh-tw/windows/business/NewWindows/YourWindowseverywhere.aspx' target='_blank'>了解更多 Windows 平板 >></a>", 
                          "Q3" => "老闆疑神疑鬼時，就要直接請他們來看臉書上客戶的動態，但如果您太常上 FB 從事自己的社交活動，請自重<br><a href='http://windows.microsoft.com/zh-tw/windows-8/personalize-pc-tutorial#customize' target='_blank'>了解更多 Windows 8.1 動態磚>></a>", 
-                         "Q4" => "老闆確實是需要開會的，只能請他們儘量利用科技來開會，並且提升自己的行動工作能力<br><a href='http://windows.microsoft.com/zh-tw/windows-8/tablets?woldogcb=0' target='_blank'>了解更多 Windows 平板 >></a>、<a href='http://www.microsoft.com/taiwan/office365/smb/default.aspx' target='_blank'>了解更多 Office 365 >></a>", 
+                         "Q4" => "老闆確實是需要開會的，只能請他們儘量利用科技來開會，並且提升自己的行動工作能力<br><a href='http://www.microsoft.com/zh-tw/windows/business/NewWindows/BestTabletPCs.aspx' target='_blank'>了解更多 Windows 平板 >></a>、<a href='http://www.microsoft.com/taiwan/office365/smb/default.aspx' target='_blank'>了解更多 Office 365 >></a>", 
                          "Q5" => "要幫助不信任新科技的老闆，要善用「事件」，比如新聞報導或調查報告，讓老闆了解老舊設備的風險<br><a href='http://www.microsoft.com/zh-tw/windows/business/retiring-xp.aspx' target='_blank'>了解更多 Windows XP 風險 >></a>", 
-                         "Q6" => "老闆喜歡喊口號創新？難免啦，畢竟真的創新難為，但工作不只是為了公司，也是為了自己，投資自己創新所需的一切，才是真正的職場晉升之道　<a href='http://www.microsoft.com/zh-tw/windows/business/retiring-xp.aspx' target='_blank'>了解更多 Windows 8.1 的創新之處>></a>"
+                         "Q6" => "老闆喜歡喊口號創新？難免啦，畢竟真的創新難為，但工作不只是為了公司，也是為了自己，投資自己創新所需的一切，才是真正的職場晉升之道　<a href='http://www.microsoft.com/zh-tw/windows/business/NewWindows/WhatsNew.aspx' target='_blank'>了解更多 Windows 8.1 的創新之處>></a>"
                         }
     end
   end
@@ -188,13 +188,8 @@ class RecordsController < ApplicationController
       if ( @record.user_fbid || @record.update_attributes(params[:record]) )
         @signup.update_attributes(params[:signup])
 
-        if params[:from] == "iframe"
-          format.html { redirect_to new_for_iframe_records_path, notice: '參加成功。' }
-          format.json { head :no_content }
-        else
-          format.html { redirect_to root_path, notice: '參加成功。'  }
-          format.json { head :no_content }
-        end
+        format.html { redirect_to thanks_records_path }
+        format.json { head :no_content }
 
       else
         flash[:alert] = "#{ @record.errors.full_messages.join("\\n").html_safe }"
