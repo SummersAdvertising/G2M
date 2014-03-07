@@ -214,7 +214,11 @@ class RecordsController < ApplicationController
   end
 
   def export
-  	@records = Record.order( :created_at => :desc )
+  	if params[ :distinct ]
+  		@records = Record.includes( :signup ).group('signups.name, signups.email').order( :created_at => :desc )
+  	else
+  		@records = Record.order( :created_at => :desc )
+  	end
   	
   	respond_to do | format |
   		format.xls {}
