@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">姓名</Data></Cell>
+        <Cell><Data ss:Type="String">公司名稱</Data></Cell>
+        <Cell><Data ss:Type="String">職銜</Data></Cell>
+        <Cell><Data ss:Type="String">電子信箱</Data></Cell>
+        <Cell><Data ss:Type="String">電話</Data></Cell>
+        <Cell><Data ss:Type="String">作業系統</Data></Cell>
+        <Cell><Data ss:Type="String">擁有電腦</Data></Cell>
+        <Cell><Data ss:Type="String">Office 版本</Data></Cell>
+        <Cell><Data ss:Type="String">更新需求</Data></Cell>
+        <Cell><Data ss:Type="String">產業</Data></Cell>
+        <Cell><Data ss:Type="String">使用裝置</Data></Cell>
+        <Cell><Data ss:Type="String">攜帶自己電腦</Data></Cell>
+        <Cell><Data ss:Type="String">公司有的行動裝置</Data></Cell>
+        <Cell><Data ss:Type="String">身分</Data></Cell>
+        <Cell><Data ss:Type="String">問題1答案</Data></Cell>
+        <Cell><Data ss:Type="String">問題1追加答案A</Data></Cell>
+        <Cell><Data ss:Type="String">問題1追加答案B</Data></Cell>
+        <Cell><Data ss:Type="String">問題2答案</Data></Cell>
+        <Cell><Data ss:Type="String">問題2追加答案</Data></Cell>
+        <Cell><Data ss:Type="String">問題3答案</Data></Cell>
+        <Cell><Data ss:Type="String">問題3追加答案A</Data></Cell>
+        <Cell><Data ss:Type="String">問題3追加答案B</Data></Cell>
+        <Cell><Data ss:Type="String">問題4答案</Data></Cell>
+        <Cell><Data ss:Type="String">問題4追加答案</Data></Cell>
+        <Cell><Data ss:Type="String">問題5答案</Data></Cell>
+        <Cell><Data ss:Type="String">問題5追加答案</Data></Cell>
+        <Cell><Data ss:Type="String">問題6答案</Data></Cell>
+        <Cell><Data ss:Type="String">問題6追加答案</Data></Cell>        
+        <Cell><Data ss:Type="String">填表時間</Data></Cell>        
+      </Row>
+    <% @records.each do |record| %>
+    <% signup = record.signup %>
+    <% answers = JSON.parse(record.answer) %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= signup.name unless signup.nil? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= signup.company unless signup.nil? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= signup.title unless signup.nil? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= signup.email unless signup.nil? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= signup.tel unless signup.nil? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= signup.pc_os unless signup.nil? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= signup.having_pc unless signup.nil? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= signup.office_version unless signup.nil? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= signup.update_need unless signup.nil? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= signup.industry unless signup.nil? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= signup.having_mobile_device unless signup.nil? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= signup.bring_pc_to_work unless signup.nil? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= signup.company_mobile_device unless signup.nil? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.user_type %></Data></Cell>        
+        <Cell><Data ss:Type="String"><%= answers[ "#{record.user_type}_Q1" ] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= answers[ "#{record.user_type}_Q1_1" ] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= answers[ "#{record.user_type}_Q1_2" ] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= answers[ "#{record.user_type}_Q2" ] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= answers[ "#{record.user_type}_Q2_1" ] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= answers[ "#{record.user_type}_Q3" ] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= answers[ "#{record.user_type}_Q3_1" ] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= answers[ "#{record.user_type}_Q3_2" ] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= answers[ "#{record.user_type}_Q4" ] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= answers[ "#{record.user_type}_Q4_1" ] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= answers[ "#{record.user_type}_Q5" ] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= answers[ "#{record.user_type}_Q5_1" ] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= answers[ "#{record.user_type}_Q6" ] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= answers[ "#{record.user_type}_Q6_1" ] %></Data></Cell>        
+        <Cell><Data ss:Type="String"><%= record.created_at %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
